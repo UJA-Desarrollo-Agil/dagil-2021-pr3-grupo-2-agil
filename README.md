@@ -1,4 +1,4 @@
-### Five Die Repeat !
+### FIVE DIE REPEAT !
 
 ## Descripción del juego
 
