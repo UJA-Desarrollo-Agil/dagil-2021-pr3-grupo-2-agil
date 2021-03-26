@@ -1,3 +1,4 @@
+
 # FIVE DIE REPEAT !
 
 ## Descripción del juego
@@ -11,4 +12,12 @@ La historia tiene un toque cotidiano en primera persona al más puro estilo de E
 https://trello.com/b/BcKd7EVj/practica-3-%C3%A1gil
 
 
+
+
+
 ## Capturas de pantalla
+![Trello_Backlog_1](https://user-images.githubusercontent.com/78795117/112686452-40d63f80-8e76-11eb-932b-ebb45efa762e.png)
+![Trello_Backlog_2](https://user-images.githubusercontent.com/78795117/112686524-5ba8b400-8e76-11eb-9d40-3ce06b092d0b.png)
+
+
+![Trello_Backlog_4](https://user-images.githubusercontent.com/78795117/112686531-5e0b0e00-8e76-11eb-908b-f84660bc14e2.png)
