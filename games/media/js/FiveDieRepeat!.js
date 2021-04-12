@@ -21,8 +21,8 @@ undum.game.slideUpSpeed = 500;
 
 /* SITUACIONES DEL JUEGO. CADA UNA CON UN UNICO ID. */
 undum.game.situations = {
-    inicio: new undum.SimpleSituation(            
-            
+    inicio: new undum.SimpleSituation(
+
         "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
@@ -38,14 +38,49 @@ undum.game.situations = {
     ),
     salir: new undum.SimpleSituation(
             "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
-            
-            
-    )
+
+
+    ),
+
+    ir_tutoria: new undum.SimpleSituation(
+      "<p>Nuestro estudiante se decidió\
+          finalmente por ir a la tutoría. Al terminar la tutoría todo le quedo más claro\
+           y pudo completar sin ninguna dificultad sus prácticas. <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+        enter: function(character, system, from) {
+          system.animateQuality("interes", character.qualities.interes+10);
+          system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+        },
+
+        heading: "Ir a tutoría",
+        diplayOrder: 3,
+        tags: ["tutoria"],
+
+      }
+    ),
+
+    no_ir_tutoria: new undum.SimpleSituation(
+      "<p>Nuestro estudiante se decicido\
+          por no ir a la tutoría e intetar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
+          sacar la practica adelante\
+           <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+             enter: function(character, system, from) {
+               system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+             },
+
+        heading: "Estudiar por mi cuenta",
+        diplayOrder: 3,
+        tags: ["tutoria"],
+
+      }
+    ),
 };
 
 // ---------------------------------------------------------------------------
 /* SITUACION DE INICIO DEL JUEGO. */
-undum.game.start = "inicio";
+
+undum.game.start = "tutoria"
+/* MODIFICADO RAMA ALBERTO (PRUEBAS) DE INICIO DEL JUEGO. */
+//undum.game.start = "inicio";
 
 
 // ---------------------------------------------------------------------------
