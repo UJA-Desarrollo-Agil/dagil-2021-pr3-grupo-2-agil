@@ -45,7 +45,7 @@ undum.game.situations = {
     ir_tutoria: new undum.SimpleSituation(
       "<p>Nuestro estudiante se decidió\
           finalmente por ir a la tutoría. Al terminar la tutoría todo le quedo más claro\
-           y pudo completar sin ninguna dificultad sus prácticas. <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+           y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
         enter: function(character, system, from) {
           system.animateQuality("interes", character.qualities.interes+10);
           system.animateQuality("conocimiento", character.qualities.conocimiento+10);
@@ -62,7 +62,7 @@ undum.game.situations = {
       "<p>Nuestro estudiante se decicido\
           por no ir a la tutoría e intetar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
           sacar la practica adelante\
-           <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+           <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
              enter: function(character, system, from) {
                system.animateQuality("conocimiento", character.qualities.conocimiento+10);
              },
@@ -70,6 +70,40 @@ undum.game.situations = {
         heading: "Estudiar por mi cuenta",
         diplayOrder: 3,
         tags: ["tutoria"],
+
+      }
+    ),
+
+
+    seguir_estudiando: new undum.SimpleSituation(
+      "<p>Después de un dia agotador\
+        nuestro estudiante quiso seguir estudiando, al llevar todo el dia estudiando y exigirse demasiado no solo no aprendio\
+        nada sino que empezo a confudir terminos, al no descansar adecuadamente su rendimiento académico bajo<a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+        enter: function(character, system, from) {
+          system.animateQuality("conocimiento", character.qualities.conocimiento-10);
+          system.animateQuality("interes", character.qualities.interes-10);
+        },
+
+        heading: "Continuar estudiando",
+        diplayOrder: 3,
+        tags: ["estudiar"],
+
+      }
+    ),
+
+    no_estudiar: new undum.SimpleSituation(
+      "<p>Al ver que no rendía más nuestro estudiante decidió dejar de  estudiar\
+          e irse temprano a la cama, a la mañana siguiente se sentía más productivo y con ganas de afrontar nuevos\
+          retos  <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>",
+
+            {
+             enter: function(character, system, from) {
+               system.animateQuality("interes", character.qualities.interes+10);
+             },
+
+        heading: "Descansar",
+        diplayOrder: 3,
+        tags: ["estudiar"],
 
       }
     ),
