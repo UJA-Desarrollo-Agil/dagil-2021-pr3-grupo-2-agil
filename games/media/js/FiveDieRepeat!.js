@@ -76,9 +76,10 @@ undum.game.situations = {
 
 
     seguir_estudiando: new undum.SimpleSituation(
-      "<p>Después de un dia agotador\
+      "<p>Después de un día agotador\
         nuestro estudiante quiso seguir estudiando, al llevar todo el dia estudiando y exigirse demasiado no solo no aprendio\
-        nada sino que empezo a confudir terminos, al no descansar adecuadamente su rendimiento académico bajo<a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>", {
+        nada sino que empezo a confudir terminos, al no descansar adecuadamente su rendimiento académico bajo\
+        <a href='debo_dejar_practica'>¿Que hará ahora nuestro estudiante?</a></p>", {
         enter: function(character, system, from) {
           system.animateQuality("conocimiento", character.qualities.conocimiento-10);
           system.animateQuality("interes", character.qualities.interes-10);
@@ -94,7 +95,7 @@ undum.game.situations = {
     no_estudiar: new undum.SimpleSituation(
       "<p>Al ver que no rendía más nuestro estudiante decidió dejar de  estudiar\
           e irse temprano a la cama, a la mañana siguiente se sentía más productivo y con ganas de afrontar nuevos\
-          retos  <a href='tutoria'>¿Que hará ahora nuestro estudiante?</a></p>",
+          retos  <a href='debo_dejar_practica'>¿Que hará ahora nuestro estudiante?</a></p>",
 
             {
              enter: function(character, system, from) {
@@ -104,6 +105,64 @@ undum.game.situations = {
         heading: "Descansar",
         diplayOrder: 3,
         tags: ["estudiar"],
+
+      }
+    ),
+
+    debo_dejar_practica: new undum.SimpleSituation(
+      "<h1 class='transient'>Dejar las practicas</h1>\
+      <p>Un compañero de clase te pide las practicas que terminaste la semana pasada, sabes que el profesor advirtio\
+      en numerosas ocasiones que la copia de ejercicios esta castigada con un 0 en esa practica, pero tu no quieres que el compañéro\
+      suspenda <a href='dejar_practica'>¿Debería dejarsela?</a> o <a href='no_dejar_practica'>¿Debería no dejarsela?</a>  </p>",
+
+        {
+
+
+        // heading: "Dejar Practica",
+        // diplayOrder: 3,
+        // tags: ["dejar_practica"],
+
+      }
+    ),
+
+    dejar_practica: new undum.SimpleSituation(
+      "<p> Asumes un riesgo para que tu compañero pueda aprobar esa practica ¿Te salió rentable? o simplemente \
+        echaste a perder todo tu trabajo\
+       <a href='tutoria'>¿Debería no dejarsela?</a>  </p>",
+
+        {
+          enter: function(character, system, from) {
+            var aleatorio = Math.floor(Math.random() * 11);
+            if (aleatorio > 5){
+                system.animateQuality("interes", character.qualities.interes-20);
+                system.setCharacterText("<p>El profesor me puso un 0 por copia</p>");
+            }else{
+                system.setCharacterText("<p>El profesor no se dio cuenta de que le deje las prácticas</p>");
+            }
+
+
+          },
+
+
+        // heading: "Dejar Practica",
+        // diplayOrder: 3,
+        // tags: ["dejar_practica"],
+
+      }
+    ),
+
+    no_dejar_practica: new undum.SimpleSituation(
+      "<p> Le explicas que lo mejor para los dos es no dejar la practica ya que no ayuda a ningua de las partes\
+        y pones en riego el trabajo de tu compañero, el compañero parece que lo entiendo y te pide ayuda para la proximas practicas\
+        tu encantado le ayudaras.\
+       <a href='tutoria'>¿Debería o no dejarsela?</a>  </p>",
+
+        {
+
+
+        heading: "Dejar Practica",
+        diplayOrder: 3,
+        tags: ["dejar_practica"],
 
       }
     ),
