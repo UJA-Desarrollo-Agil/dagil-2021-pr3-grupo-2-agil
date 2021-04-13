@@ -21,8 +21,8 @@ undum.game.slideUpSpeed = 500;
 
 /* SITUACIONES DEL JUEGO. CADA UNA CON UN UNICO ID. */
 undum.game.situations = {
-    inicio: new undum.SimpleSituation(            
-            
+    inicio: new undum.SimpleSituation(
+
         "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
@@ -38,14 +38,75 @@ undum.game.situations = {
     ),
     salir: new undum.SimpleSituation(
             "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
-            
-            
-    )
+
+
+    ),
+    biblioteca: new undum.SimpleSituation(
+     "<p>Hoy nuestro estudiante se decidió\
+         por ir a la biblioteca con un amigo. \
+          <a href='dudasamigo'>Preguntar dudas que le surgen a su compañero</a> \
+          <a href='bibliomusica'>Ponerse musica para estudiar</a> \
+          <a href='verordenador'>Mirar ordenador un rato</a></p>", {
+       enter: function(character, system, from) {
+         system.animateQuality("interes", character.qualities.interes+10);
+         system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+       },
+
+       heading: "Biblioteca con un amigo",
+       diplayOrder: 3,
+       tags: ["biblioteca"],
+
+     }
+   ),
+
+    dudasamigo: new undum.SimpleSituation(
+    "<p>Le preguntamos a nuestro amigo por una duda que nos ha surgido mientras estudiabamos.</a></p>", {
+      enter: function(character, system, from) {
+        system.animateQuality("interes", character.qualities.interes+30);
+        system.animateQuality("apuntes", character.qualities.apuntes+1);
+        system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+      },
+
+      heading: "Resolviendo dudas con amigo",
+      diplayOrder: 3,
+      tags: ["dudasamigo"],
+
+    }
+  ),
+
+  bibliomusica: new undum.SimpleSituation(
+  "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la biblioteca</a></p>", {
+    enter: function(character, system, from) {
+      system.animateQuality("interes", character.qualities.interes-20);
+      system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+    },
+
+    heading: "Musica en la biblioteca",
+    diplayOrder: 3,
+    tags: ["bibliomusica"],
+
+  }
+),
+
+verordenador: new undum.SimpleSituation(
+"<p>Nos distraemos con el ordenador (Viendo Twitter,Memes...)</p>", {
+  enter: function(character, system, from) {
+    system.animateQuality("interes", character.qualities.interes-80);
+    system.animateQuality("conocimiento", character.qualities.conocimiento-20);
+  },
+
+  particulares: new undum.SimpleSituation(
+  "<p>Nuestro estudiante ha elegido la opción de buscar un profesor de particulares para afrontar la asignatura.</p>", {
+    enter: function(character, system, from) {
+      system.animatedQuality("pasta",character.qualities.pasta-100);
+      system.animateQuality("interes", character.qualities.interes+80);
+    },
+
 };
 
 // ---------------------------------------------------------------------------
 /* SITUACION DE INICIO DEL JUEGO. */
-undum.game.start = "inicio";
+undum.game.start = "biblioteca";
 
 
 // ---------------------------------------------------------------------------
@@ -59,6 +120,9 @@ undum.game.qualities = {
     ),
     pasta: new undum.IntegerQuality(
             "Pasta", {priority: "0003", group: 'inventario'}
+    ),
+    apuntes: new undum.IntegerQuality(
+            "Apuntes", {priority: "0003", group: 'inventario'}
     ),
     suspenso: new undum.OnOffQuality(
             "Suspenso", {priority: "0001", group: 'progreso', onDisplay: "&#10003;"}
@@ -83,6 +147,7 @@ undum.game.init = function (character, system) {
     character.qualities.interes = 50;
     character.qualities.conocimiento = 0;
     character.qualities.pasta = 200;
+    character.qualities.apuntes= 0;
     character.qualities.suspenso = 1;
     character.qualities.aprobado = 0;
     system.setCharacterText("<p>Estado del personaje:</p>");
