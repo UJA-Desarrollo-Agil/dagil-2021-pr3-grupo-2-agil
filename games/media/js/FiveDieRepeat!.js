@@ -42,8 +42,8 @@ undum.game.situations = {
 
     ),
     biblioteca: new undum.SimpleSituation(
-     "<p>Hoy nuestro estudiante se decidió\
-         por ir a la biblioteca con un amigo. \
+     "<p>Hoy nuestro estudiante  decidió\
+         ir a la biblioteca con un amigo. \
           <a href='dudasamigo'>Preguntar dudas que le surgen a su compañero</a> \
           <a href='bibliomusica'>Ponerse musica para estudiar</a> \
           <a href='verordenador'>Mirar ordenador un rato</a></p>", {
@@ -94,13 +94,50 @@ verordenador: new undum.SimpleSituation(
     system.animateQuality("interes", character.qualities.interes-80);
     system.animateQuality("conocimiento", character.qualities.conocimiento-20);
   },
+  heading: "Perder el tiempo en el PC",
+  diplayOrder: 3,
+  tags: ["verordenador"],
+    }
 
-  particulares: new undum.SimpleSituation(
-  "<p>Nuestro estudiante ha elegido la opción de buscar un profesor de particulares para afrontar la asignatura.</p>", {
-    enter: function(character, system, from) {
-      system.animatedQuality("pasta",character.qualities.pasta-100);
-      system.animateQuality("interes", character.qualities.interes+80);
-    },
+),
+
+particulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante toma la decisión de apuntarse a una academia para afrontar la asignatura.</p>", {
+  enter: function(character, system, from) {
+    system.animateQuality("pasta", character.qualities.pasta-150);
+  },
+  heading: "Clases particulares",
+  diplayOrder: 3,
+  tags: ["particulares"],
+    }
+
+),
+
+irparticulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante se ha levantado productivo y va hacia la academia para mejorar en la asignatura</p>", {
+  enter: function(character, system, from) {
+    system.animateQuality("interes", character.qualities.interes+80);
+    system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+  },
+  heading: "Asiste a clases particulares",
+  diplayOrder: 3,
+  tags: ["irparticulares"],
+    }
+
+),
+
+noirparticulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante se ha levantado vaguete y no va</p>", {
+  enter: function(character, system, from) {
+    system.animateQuality("interes", character.qualities.interes-80);
+    system.animateQuality("conocimiento", character.qualities.conocimiento-100);
+  },
+  heading: "No asiste a clases particulares",
+  diplayOrder: 3,
+  tags: ["noirparticulares"],
+    }
+
+)
 
 };
 
