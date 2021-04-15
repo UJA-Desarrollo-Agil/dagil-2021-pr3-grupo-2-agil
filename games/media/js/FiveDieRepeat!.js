@@ -23,7 +23,7 @@ undum.game.slideUpSpeed = 500;
 undum.game.situations = {
     inicio: new undum.SimpleSituation(            
             
-        "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+        "<H1><a href='clase' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
@@ -38,9 +38,109 @@ undum.game.situations = {
     ),
     salir: new undum.SimpleSituation(
             "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
+                
+    ),
+    ///////////////ESCENAS JUAN///////////////
+    clase: new undum.SimpleSituation(
+        "<p>Son las ocho de la mañana y despues de desactivar cuatro alarmas por fín te levantas de la cama. Estabas hecho polvo tras trasnochar haciendo la práctica de Desarrollo Ágil\
+        </p>Aún es prácticamente denoche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
+        \
+        <p >\Parece que va a hacer un buen día. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando a clase</a> o <a href='clase2'>ir en autobus a clase</a>.\
+        </p>",
+        {
+            heading: "Un Día Normal de clase"
+           
+            //exit: function(character, system, to) {
+                //system.setCharacterText(
+                    //"<p>14:05 PM</p>"
+                //);
+                 //system.setQuality("hambre", character.qualities.hambre+2);
+
+   
+            //}
+        }
+
+    ),
+    clase1: new undum.SimpleSituation(
+        "<p>Misteriosamente te apetecía hacer ejercicio y has decidido bajar andando a la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
+        \
+        </p>",
+        {
+            heading: "Decides ir a clase andando"
+           
             
+        }
+
+    ),
+
+    clase2: new undum.SimpleSituation(
+        "<p>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>",
+        {
+            heading: "Has decidido ir a clase andando"
+           
             
-    )
+        }
+
+    ),
+
+     faltar: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Tienes que faltar un día a clase"
+           
+            
+        }
+
+    ),
+    faltar1: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Decides faltar día 1 "
+           
+            
+        }
+
+    ),
+    faltar2: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Decides faltar día 2"
+           
+            
+        }
+
+    ),
+
+    voluntario: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Decisión ejercicio voluntario"
+           
+            
+        }
+
+    ),
+
+    voluntario1: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Decides no entregar ejercicio voluntario"
+           
+            
+        }
+
+    ),
+
+    voluntario2: new undum.SimpleSituation(
+        "<p></p>",
+        {
+            heading: "Decides entregar ejercicio voluntario"
+           
+            
+        }
+
+    ),
+
 };
 
 // ---------------------------------------------------------------------------
