@@ -45,28 +45,34 @@ undum.game.situations = {
         "<p>Son las ocho de la mañana y despues de desactivar cuatro alarmas por fín te levantas de la cama. Estabas hecho polvo tras trasnochar haciendo la práctica de Desarrollo Ágil\
         </p>Aún es prácticamente denoche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
         \
-        <p >\Parece que va a hacer un buen día. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando a clase</a> o <a href='clase2'>ir en autobus a clase</a>.\
+        <p >\Sin embargo, por lo menos parece que va a hacer una buena mañana. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando a clase</a> o <a href='clase2'>ir en autobus a clase</a>.\
         </p>",
         {
-            heading: "Un Día Normal de clase"
+            heading: "Un Día Normal de clase",
            
-            //exit: function(character, system, to) {
-                //system.setCharacterText(
-                    //"<p>14:05 PM</p>"
-                //);
-                 //system.setQuality("hambre", character.qualities.hambre+2);
+            enter: function(character, system, to) {
+                
+                 system.setQuality("interes", character.qualities.interes+2);
 
    
-            //}
+            }
         }
 
     ),
     clase1: new undum.SimpleSituation(
         "<p>Misteriosamente te apetecía hacer ejercicio y has decidido bajar andando a la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
-        \
-        </p>",
+		Te pegas una larga caminata de media hora hacia la Universidad de Jaén, podrías haberte buscado un piso más cercano. <p>Por el camino te encuentras un autobús de la línea que sueles cojer\
+		averiado en mitad de la carretera.<\p> Suerte que has decidido ir andando. <p>Por fin, has llegado. Encima puntual. Entras en el edificio A4 y entras en tu aula. Menos mal que has ido a clase, hoy explicaban uno de los temas más difíciles.",
         {
-            heading: "Decides ir a clase andando"
+            heading: "Decides ir a clase andando",
+			enter: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>Has podido tomar apuntes del tema 2.</p>"
+                );
+                 system.setQuality("conocimiento", character.qualities.conocimiento+10);
+
+   
+            }
            
             
         }
@@ -74,10 +80,21 @@ undum.game.situations = {
     ),
 
     clase2: new undum.SimpleSituation(
-        "<p>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>",
-        {
-            heading: "Has decidido ir a clase andando"
-           
+        "<p>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
+		<p>Te dirijes hacia la parada de autobús mas cercana. Aunque vas escuchando música la espera se te hace infinita. Es bus ha llegado veinte minutos tarde. </p>\
+		<p>Por fin estas dentro. Te sientas en el último asiento, cerca del motor. Tras dos minutos de trayecto se oye como un crujido en el motor y se detiene súbitamente.</p>\
+		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase",
+		
+		{
+            heading: "Has decidido ir a clase andando",
+            enter: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>No has podido tomar apuntes del tema 2.</p>"
+                );
+                 system.setQuality("conocimiento", character.qualities.conocimiento-10);
+
+   
+            }
             
         }
 
