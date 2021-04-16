@@ -25,7 +25,7 @@ undum.game.situations = {
             
         "<H1><a href='clase' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
-        <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+        <H1><a href='faltar' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
         <H1><a href='salir' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>SALIR</center></p></H1>"
@@ -101,7 +101,7 @@ undum.game.situations = {
     ),
 
      faltar: new undum.SimpleSituation(
-        "<p></p>",
+        "<p>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'>faltar el jueves</a>para tener tiempo a hacer todas las prácticas.</p>",
         {
             heading: "Tienes que faltar un día a clase"
            
@@ -112,7 +112,15 @@ undum.game.situations = {
     faltar1: new undum.SimpleSituation(
         "<p></p>",
         {
-            heading: "Decides faltar día 1 "
+            heading: "Decides faltar el miércoles ",
+			enter: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>Han pasado lista y han hecho ejercicios.</p>"
+                );
+                 system.setQuality("conocimiento", character.qualities.conocimiento-15);
+
+   
+            }
            
             
         }
@@ -121,7 +129,15 @@ undum.game.situations = {
     faltar2: new undum.SimpleSituation(
         "<p></p>",
         {
-            heading: "Decides faltar día 2"
+            heading: "Decides faltar el jueves",
+			enter: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>No te has perdido gran cosa.</p>"
+                );
+                 system.setQuality("conocimiento", character.qualities.conocimiento-1);
+
+   
+            }
            
             
         }
