@@ -21,9 +21,8 @@ undum.game.slideUpSpeed = 500;
 
 /* SITUACIONES DEL JUEGO. CADA UNA CON UN UNICO ID. */
 undum.game.situations = {
-    inicio: new undum.SimpleSituation(            
-            
-        "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+    inicio: new undum.SimpleSituation(
+            "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
@@ -31,15 +30,20 @@ undum.game.situations = {
                 <span id='span4'></span><center>SALIR</center></p></H1>"
             ),
     nuevojuego: new undum.SimpleSituation(
-            "<h1>Aqui iniciariamos un nuevo juego preguntandole al usuario su nombre.</h1>"
+            "<h1>Nombre del personaje?</h1>",
             ),
     cargarjuego: new undum.SimpleSituation(
             "<h1>Aqui cargariamos un juego que previamente se haya guardado.</h1>"
-    ),
+            ),
     salir: new undum.SimpleSituation(
-            "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
-            
-            
+            "<h1>Y aqui se volveria a la pantalla de inicio.</h1>",
+            {
+                enter: function () {
+                    location.reload();
+                }
+            }
+
+
     )
 };
 
