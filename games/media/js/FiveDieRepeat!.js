@@ -27,7 +27,7 @@ undum.game.situations = {
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='faltar' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
-        <H1><a href='salir' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+        <H1><a href='voluntario' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>SALIR</center></p></H1>"
             ),
     nuevojuego: new undum.SimpleSituation(
@@ -91,7 +91,8 @@ undum.game.situations = {
                 system.setCharacterText(
                     "<p>No has podido tomar apuntes del tema 2.</p>"
                 );
-                 system.setQuality("conocimiento", character.qualities.conocimiento-10);
+                system.setQuality("conocimiento", character.qualities.conocimiento - 10);
+                system.setQuality("pasta", character.qualitiespasta - 1);
 
    
             }
@@ -145,7 +146,9 @@ undum.game.situations = {
     ),
 
     voluntario: new undum.SimpleSituation(
-        "<p></p>",
+        "<p>Estabas mirando Docencia Virtual tranquilamente y observas que hay una entrega de actividad voluntaria para dentro de cinco horas.\
+        <p>Te surje la duda sobre si es obligatorio o no entregarla. Este tipo de actividades casi nunca tienen valor y además pone que es voluntaria.\
+        <p>\ <a href='voluntario2'>Entregar el ejercicio</a> o <a href='voluntario1'>No entregar el ejercicio</a>. </p><p><a href='guia'>Mirar detalladamente</a> en la guía docente para salir de dudas.</p></p > ",
         {
             heading: "Decisión ejercicio voluntario"
            
@@ -154,10 +157,37 @@ undum.game.situations = {
 
     ),
 
+    guia: new undum.SimpleSituation(
+        "<p>Realización de trabajos, casos o ejercicios | Realización de trabajos casos o ejercicios | Entrega de ejercicios 5.0%</p>\
+        <p>Se te presenta una difícil decisión: <a href='voluntario2'>Entregar el ejercicio</a> o <a href='voluntario1'>No entregar el ejercicio</a>.</p>",
+        {
+            heading: "Guía docente de la asignatura",
+            enter: function (character, system, to) {
+                system.setCharacterText(
+                    "<p>No te has perdido gran cosa.</p>"
+                );
+                system.setQuality("conocimiento", character.qualities.conocimiento + 1);
+
+
+            }
+
+
+        }
+
+    ),
+
     voluntario1: new undum.SimpleSituation(
         "<p></p>",
         {
-            heading: "Decides no entregar ejercicio voluntario"
+            heading: "Decides no entregar ejercicio voluntario",
+            enter: function (character, system, to) {
+                system.setCharacterText(
+                    "<p>No te has perdido gran cosa.</p>"
+                );
+                system.setQuality("conocimiento", character.qualities.conocimiento - 5);
+
+
+            }
            
             
         }
@@ -167,7 +197,15 @@ undum.game.situations = {
     voluntario2: new undum.SimpleSituation(
         "<p></p>",
         {
-            heading: "Decides entregar ejercicio voluntario"
+            heading: "Decides entregar ejercicio voluntario",
+            enter: function (character, system, to) {
+                system.setCharacterText(
+                    "<p>No te has perdido gran cosa.</p>"
+                );
+                system.setQuality("conocimiento", character.qualities.conocimiento + 5);
+
+
+            }
            
             
         }
