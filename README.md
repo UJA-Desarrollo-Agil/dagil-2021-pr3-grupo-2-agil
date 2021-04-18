@@ -2,6 +2,9 @@
 
 # FIVE DIE REPEAT !
 
+![image](https://user-images.githubusercontent.com/78794703/115151280-7b458d80-a06c-11eb-8ca0-aa05820e50dd.png)
+
+
 ## Sprint 0
 
 ### Descripción del juego
