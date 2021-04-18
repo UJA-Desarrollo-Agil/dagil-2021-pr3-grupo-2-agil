@@ -119,6 +119,7 @@ undum.game.situations = {
             enter: function (character, system, to) {
 
                 system.setQuality("interes", character.qualities.interes - 3);
+                system.setQuality("pasta", character.qualities.pasta - 22);
 
 
             }
@@ -194,9 +195,16 @@ undum.game.situations = {
     voluntario: new undum.SimpleSituation(
         "<p>Estabas mirando Docencia Virtual tranquilamente y observas que hay una entrega de actividad voluntaria para dentro de cinco horas.\
         <p>Te surje la duda sobre si es obligatorio o no entregarla. Este tipo de actividades casi nunca tienen valor y además pone que es voluntaria.\
-        <p>\ <a href='voluntario2'>Entregar el ejercicio</a> o <a href='voluntario1'>No entregar el ejercicio</a>. </p><p><a href='guia'>Mirar detalladamente</a> en la guía docente para salir de dudas.</p></p > ",
+        <p>\ <p><a href='voluntario2'>Entregar el ejercicio.</a> </p><p><a href='voluntario1'>No entregar el ejercicio</a>. </p><p><a href='guia'>Mirar detalladamente</a> en la guía docente para salir de dudas.</p></p > ",
         {
-            heading: "Decisión ejercicio voluntario"
+            heading: "Decisión ejercicio voluntario",
+            enter: function (character, system, to) {
+               
+                
+                system.setQuality("pasta", character.qualities.pasta - 10);
+
+
+            },
            
             
         }
@@ -223,14 +231,13 @@ undum.game.situations = {
     ),
 
     voluntario1: new undum.SimpleSituation(
-        "<p></p>",
+        "<p>Para hacer el ejercicio a prisa prefieres no entregar nada. En más de una asisgnatura has acabado suspendiendo a pesar de no haber los ejercicios voluntarios.</p><p>Además el profesor podría haber avisado.</p>",
         {
             heading: "Decides no entregar ejercicio voluntario",
             enter: function (character, system, to) {
-                system.setCharacterText(
-                    "<p>No te has perdido gran cosa.</p>"
-                );
+               
                 system.setQuality("conocimiento", character.qualities.conocimiento - 5);
+                system.setQuality("interes", character.qualities.interes - 5);
 
 
             }
@@ -241,14 +248,15 @@ undum.game.situations = {
     ),
 
     voluntario2: new undum.SimpleSituation(
-        "<p></p>",
+        "<p>Aunque queda poco y habías quedado para ir al cine decides ponerte a hacer el ejercicio.</p>\
+        <p>Aprobar esta asignatura es el pricipal objetivo este año, harás todo lo que esté en tu mano.</p>\
+        <p>Quizás si el profesor ve que has entregado todos los ejercicios volutarios te aprueba en caso de duda.</p>",
         {
             heading: "Decides entregar ejercicio voluntario",
             enter: function (character, system, to) {
-                system.setCharacterText(
-                    "<p>No te has perdido gran cosa.</p>"
-                );
+
                 system.setQuality("conocimiento", character.qualities.conocimiento + 5);
+                system.setQuality("interes", character.qualities.interes + 1);
 
 
             }
