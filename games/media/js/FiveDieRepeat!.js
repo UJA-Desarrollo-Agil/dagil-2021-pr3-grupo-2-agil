@@ -42,17 +42,18 @@ undum.game.situations = {
     ),
     ///////////////ESCENAS JUAN///////////////
     clase: new undum.SimpleSituation(
-        "<p>Son las ocho de la mañana y despues de desactivar cuatro alarmas por fín te levantas de la cama. Estabas hecho polvo tras trasnochar haciendo la práctica de Desarrollo Ágil\
-        </p>Aún es prácticamente denoche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
+        "<p><img src='media/img/despertador.gif' class='float_right'>Son las ocho de la mañana y despues de desactivar cuatro alarmas por fín te levantas de la cama. Estás hecho polvo tras trasnochar haciendo la práctica de Desarrollo Ágil.\
+        </p><p>Aún es prácticamente de noche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
         \
-        <p >\Sin embargo, por lo menos parece que va a hacer una buena mañana. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando a clase</a> o <a href='clase2'>ir en autobus a clase</a>.\
+        <p >\Sin embargo, por lo menos parece que va a hacer una buena mañana. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando</a> o <a href='clase2'>ir en autobus</a> a clase.\
         </p>",
         {
             heading: "Un Día Normal de clase",
            
             enter: function(character, system, to) {
                 
-                 system.setQuality("interes", character.qualities.interes+2);
+                system.setQuality("interes", character.qualities.interes + 2);
+                system.setQuality("pasta", character.qualities.pasta - 30);
 
    
             }
@@ -61,18 +62,27 @@ undum.game.situations = {
     ),
     clase1: new undum.SimpleSituation(
         "<p>Misteriosamente te apetecía hacer ejercicio y has decidido bajar andando a la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
-		Te pegas una larga caminata de media hora hacia la Universidad de Jaén, podrías haberte buscado un piso más cercano. <p>Por el camino te encuentras un autobús de la línea que sueles cojer\
-		averiado en mitad de la carretera.<\p> Suerte que has decidido ir andando. <p>Por fin, has llegado. Encima puntual. Entras en el edificio A4 y entras en tu aula. Menos mal que has ido a clase, hoy explicaban uno de los temas más difíciles.",
+		<p>Te pegas una larga caminata de media hora hacia la Universidad de Jaén, podrías haberte buscado un piso más cercano. <p>Por el camino te encuentras un autobús de la línea que sueles cojer\
+		averiado en mitad de la carretera. Suerte que has decidido ir andando. </p><p>Por fin, has llegado. Entras en el edificio A4 y a tu aula. Hoy explicaban uno de los temas más difíciles.\
+       <p><a href='./tomarapuntes'>Tomar apuntes.</a></p> ",
         {
             heading: "Decides ir a clase andando",
 			enter: function(character, system, to) {
-                system.setCharacterText(
-                    "<p>Has podido tomar apuntes del tema 2.</p>"
-                );
-                 system.setQuality("conocimiento", character.qualities.conocimiento+10);
-
+                
+                system.setQuality("interes", character.qualities.interes - 2);
    
-            }
+            },
+            actions: {
+                "tomarapuntes": function (character, system, action) {
+                    system.setCharacterText(
+                        "<p>Objeto: Apuntes del tema 2.</p>"
+                    );
+                    system.setQuality("conocimiento", character.qualities.conocimiento + 10);
+                    system.setQuality("interes", character.qualities.interes + 5);
+                    system.setQuality("tema2", character.qualities.tema2 + 1);
+
+                }
+            },
            
             
         }
@@ -102,42 +112,78 @@ undum.game.situations = {
     ),
 
      faltar: new undum.SimpleSituation(
-        "<p>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'>faltar el jueves</a>para tener tiempo a hacer todas las prácticas.</p>",
+         "<p>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'> faltar el jueves</a>para tener tiempo a hacer todas las prácticas.\
+            </p><p>Ninguna de las dos es una buena decisión pero no te queda otra.</p>",
         {
-            heading: "Tienes que faltar un día a clase"
-           
-            
-        }
+            heading: "Tienes que faltar un día a clase",
+            enter: function (character, system, to) {
 
-    ),
-    faltar1: new undum.SimpleSituation(
-        "<p></p>",
-        {
-            heading: "Decides faltar el miércoles ",
-			enter: function(character, system, to) {
-                system.setCharacterText(
-                    "<p>Han pasado lista y han hecho ejercicios.</p>"
-                );
-                 system.setQuality("conocimiento", character.qualities.conocimiento-15);
+                system.setQuality("interes", character.qualities.interes - 3);
 
-   
+
             }
            
             
         }
 
     ),
+    faltar1: new undum.SimpleSituation(
+        "<p>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
+          <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
+          <p><a href='voluntario'>Seguir trabajando en las prácticas.</a></p>",
+        {
+            heading: "Decides faltar el miércoles ",
+			enter: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>Han pasado lista y han hecho ejercicios.</p>"
+                );
+                system.setQuality("conocimiento", character.qualities.conocimiento - 15);
+                system.setQuality("interes", character.qualities.interes - 5);
+
+   
+            },
+            actions: {
+                "pedirapuntes": function (character, system, action) {
+                    system.setCharacterText(
+                        "<p>Le has pedido apuntes del Tema 8 a Manolo.</p>"
+                    );
+                    system.setQuality("conocimiento", character.qualities.conocimiento + 5);
+                    system.setQuality("interes", character.qualities.interes + 5);
+                    system.setQuality("tema8", character.qualities.tema8 + 1);
+
+                }
+            }
+
+           
+            
+        }
+
+    ),
     faltar2: new undum.SimpleSituation(
-        "<p></p>",
+        "<p>Hablando por WhatsApp con tu amigo Manolo te dice que se ha puesto a leer diapositivas y no te has perdido gran cosa.</p>\
+        <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
+          <p><a href='voluntario'>Seguir trabajando en las prácticas.</a></p>",
         {
             heading: "Decides faltar el jueves",
 			enter: function(character, system, to) {
                 system.setCharacterText(
                     "<p>No te has perdido gran cosa.</p>"
                 );
-                 system.setQuality("conocimiento", character.qualities.conocimiento-1);
+                system.setQuality("conocimiento", character.qualities.conocimiento - 1);
+                system.setQuality("interes", character.qualities.interes - 1);
 
    
+            },
+            actions: {
+                "pedirapuntes": function (character, system, action) {
+                    system.setCharacterText(
+                        "<p>Le has pedido apuntes del Tema 9 a Manolo.</p>"
+                    );
+                    system.setQuality("conocimiento", character.qualities.conocimiento + 2);
+                    system.setQuality("interes", character.qualities.interes + 3);
+                    system.setQuality("tema9", character.qualities.tema9 + 1);
+
+                }
             }
            
             
@@ -236,7 +282,17 @@ undum.game.qualities = {
     ),
     aprobado: new undum.OnOffQuality(
             "Aprobado", {priority: "0002", group: 'progreso', onDisplay: "&#10003;"}
-    )
+    ),
+    ////
+    tema2: new undum.OnOffQuality(
+        "Apuntes del Tema 2", { priority: "0003", group: 'progreso', onDisplay: "&#10003;" }
+    ),
+    tema8: new undum.OnOffQuality(
+        "Apuntes del Tema 8", { priority: "0004", group: 'progreso', onDisplay: "&#10003;" }
+    ),
+    tema9: new undum.OnOffQuality(
+        "Apuntes del Tema 9", { priority: "0004", group: 'progreso', onDisplay: "&#10003;" }
+    ),
 };
 
 // ---------------------------------------------------------------------------
@@ -256,5 +312,9 @@ undum.game.init = function (character, system) {
     character.qualities.pasta = 200;
     character.qualities.suspenso = 1;
     character.qualities.aprobado = 0;
+    ///
+    character.qualities.tema2 = 0;
+    character.qualities.tema8 = 0;
+    character.qualities.tema9 = 0;
     system.setCharacterText("<p>Estado del personaje:</p>");
 };
