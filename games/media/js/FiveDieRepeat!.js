@@ -46,7 +46,7 @@ undum.game.situations = {
         </p><p>Aún es prácticamente de noche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
         \
         <p >\Sin embargo, por lo menos parece que va a hacer una buena mañana. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando</a> o <a href='clase2'>ir en autobus</a> a clase.\
-        </p>",
+        </p> ",
         {
             heading: "Un Día Normal de clase",
            
@@ -64,7 +64,7 @@ undum.game.situations = {
         "<p>Misteriosamente te apetecía hacer ejercicio y has decidido bajar andando a la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
 		<p>Te pegas una larga caminata de media hora hacia la Universidad de Jaén, podrías haberte buscado un piso más cercano. <p>Por el camino te encuentras un autobús de la línea que sueles cojer\
 		averiado en mitad de la carretera. Suerte que has decidido ir andando. </p><p>Por fin, has llegado. Entras en el edificio A4 y a tu aula. Hoy explicaban uno de los temas más difíciles.\
-       <p><a href='./tomarapuntes'>Tomar apuntes.</a></p> ",
+       <p><a href='./tomarapuntes'>Tomar apuntes.</a></p> <p><a href='faltar'>Continuar historia.</a></p> ",
         {
             heading: "Decides ir a clase andando",
 			enter: function(character, system, to) {
@@ -93,7 +93,8 @@ undum.game.situations = {
         "<p>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
 		<p>Te dirijes hacia la parada de autobús mas cercana. Aunque vas escuchando música la espera se te hace infinita. Es bus ha llegado veinte minutos tarde. </p>\
 		<p>Por fin estas dentro. Te sientas en el último asiento, cerca del motor. Tras dos minutos de trayecto se oye como un crujido en el motor y se detiene súbitamente.</p>\
-		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase",
+		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase. Prácticamente como si no hubieras ido.\
+           <p><a href='faltar'>Continuar historia.</a></p>",
 		
 		{
             heading: "Has decidido ir a clase andando",
@@ -131,7 +132,7 @@ undum.game.situations = {
     faltar1: new undum.SimpleSituation(
         "<p>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
           <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
-          <p><a href='voluntario'>Seguir trabajando en las prácticas.</a></p>",
+          <p><a href='voluntario'>Continuar historia.</a></p>",
         {
             heading: "Decides faltar el miércoles ",
 			enter: function(character, system, to) {
@@ -163,7 +164,7 @@ undum.game.situations = {
     faltar2: new undum.SimpleSituation(
         "<p>Hablando por WhatsApp con tu amigo Manolo te dice que se ha puesto a leer diapositivas y no te has perdido gran cosa.</p>\
         <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
-          <p><a href='voluntario'>Seguir trabajando en las prácticas.</a></p>",
+          <p><a href='voluntario'>Continuar historia.</a></p>",
         {
             heading: "Decides faltar el jueves",
 			enter: function(character, system, to) {
