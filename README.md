@@ -35,13 +35,23 @@ https://trello.com/b/BcKd7EVj/practica-3-%C3%A1gil
 Explicación:
 Seleccionamos estas 7 HU, de las cuales 3 son innegociables y tienen un valor máximo para nosotros. Son una prioridad que decidimos afrontar en el Sprint.
 Los siguientes seleccionados no son innegociables pero también tienen un valor interesante y no son complicados de hacer, por lo que decidimos afrontarlos antes y dejarlo hecho para un futuro.
-### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint.
+
+### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint
 ![CapturaHUdescompuestas](https://user-images.githubusercontent.com/78795117/115222525-1c832100-a10b-11eb-8eff-0b4be9e8ef2d.JPG)
 ![CapturaHUdescompuestas2](https://user-images.githubusercontent.com/78795117/115221908-71726780-a10a-11eb-8d0c-2a8d8235f170.JPG)
 
-
 ### Capturas de pantalla del Product Backlog y del Sprint Backlog tras las modificaciones  realizadas en el Product Backlog Refinement
+![image](https://user-images.githubusercontent.com/78794703/115246999-ac829400-a126-11eb-8248-3e7f695cc7ad.png)
+![image](https://user-images.githubusercontent.com/78794703/115247150-d471f780-a126-11eb-8ca8-784164a07b1f.png)
+
+![image](https://user-images.githubusercontent.com/78794703/115247400-0c793a80-a127-11eb-8d1c-1688225e1287.png)
+![image](https://user-images.githubusercontent.com/78794703/115247460-1864fc80-a127-11eb-9eed-782aac95c8f0.png)
+
 ### Conclusiones obtenidas en la Sprint Review
+
+
 ### Conclusiones obtenidas en la Sprint Retrospective
+
 ### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
+
 ### Captura de pantalla de las HU del Product Backlog  una vez acabado el sprint
