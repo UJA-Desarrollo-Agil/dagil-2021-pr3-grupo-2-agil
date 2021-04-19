@@ -165,6 +165,105 @@ undum.game.situations = {
 
       }
     ),
+
+    biblioteca: new undum.SimpleSituation(
+    "<p>Hoy nuestro estudiante  decidió\
+        ir a la biblioteca con un amigo. \
+         <a href='dudasamigo'>Preguntar dudas que le surgen a su compañero</a> \
+         <a href='bibliomusica'>Ponerse musica para estudiar</a> \
+         <a href='verordenador'>Mirar ordenador un rato</a></p>", {
+      enter: function(character, system, from) {
+        system.animateQuality("interes", character.qualities.interes+10);
+        system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+      },
+
+      heading: "Biblioteca con un amigo",
+      diplayOrder: 3,
+      tags: ["biblioteca"],
+
+    }
+  ),
+
+   dudasamigo: new undum.SimpleSituation(
+   "<p>Le preguntamos a nuestro amigo por una duda que nos ha surgido mientras estudiabamos.</a></p>", {
+     enter: function(character, system, from) {
+       system.animateQuality("interes", character.qualities.interes+30);
+       system.animateQuality("apuntes", character.qualities.apuntes+1);
+       system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+     },
+
+     heading: "Resolviendo dudas con amigo",
+     diplayOrder: 3,
+     tags: ["dudasamigo"],
+
+   }
+ ),
+
+ bibliomusica: new undum.SimpleSituation(
+ "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la biblioteca</a></p>", {
+   enter: function(character, system, from) {
+     system.animateQuality("interes", character.qualities.interes-20);
+     system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+   },
+
+   heading: "Musica en la biblioteca",
+   diplayOrder: 3,
+   tags: ["bibliomusica"],
+
+ }
+),
+
+verordenador: new undum.SimpleSituation(
+"<p>Nos distraemos con el ordenador (Viendo Twitter,Memes...)</p>", {
+ enter: function(character, system, from) {
+   system.animateQuality("interes", character.qualities.interes-80);
+   system.animateQuality("conocimiento", character.qualities.conocimiento-20);
+ },
+ heading: "Perder el tiempo en el PC",
+ diplayOrder: 3,
+ tags: ["verordenador"],
+   }
+
+),
+
+particulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante toma la decisión de apuntarse a una academia para afrontar la asignatura.</p>", {
+ enter: function(character, system, from) {
+   system.animateQuality("pasta", character.qualities.pasta-150);
+ },
+ heading: "Clases particulares",
+ diplayOrder: 3,
+ tags: ["particulares"],
+   }
+
+),
+
+irparticulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante se ha levantado productivo y va hacia la academia para mejorar en la asignatura</p>", {
+ enter: function(character, system, from) {
+   system.animateQuality("interes", character.qualities.interes+80);
+   system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+ },
+ heading: "Asiste a clases particulares",
+ diplayOrder: 3,
+ tags: ["irparticulares"],
+   }
+
+),
+
+noirparticulares: new undum.SimpleSituation(
+"<p>Nuestro estudiante se ha levantado vaguete y no va</p>", {
+ enter: function(character, system, from) {
+   system.animateQuality("interes", character.qualities.interes-80);
+   system.animateQuality("conocimiento", character.qualities.conocimiento-100);
+ },
+ heading: "No asiste a clases particulares",
+ diplayOrder: 3,
+ tags: ["noirparticulares"],
+   }
+
+),
+
 };
 
 // ---------------------------------------------------------------------------
