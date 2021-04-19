@@ -36,7 +36,7 @@ Explicación:
 Seleccionamos estas 7 HU, de las cuales 3 son innegociables y tienen un valor máximo para nosotros. Son una prioridad que decidimos afrontar en el Sprint.
 Los siguientes seleccionados no son innegociables pero también tienen un valor interesante y no son complicados de hacer, por lo que decidimos afrontarlos antes y dejarlo hecho para un futuro.
 ### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint.
-![CapturaHUdescompuestas](https://user-images.githubusercontent.com/78795117/115221672-34a67080-a10a-11eb-92cf-f4eb83af4619.JPG)
+![CapturaHUdescompuestas](https://user-images.githubusercontent.com/78795117/115222232-cdd58700-a10a-11eb-9830-7e64700c60e9.JPG)
 ![CapturaHUdescompuestas2](https://user-images.githubusercontent.com/78795117/115221908-71726780-a10a-11eb-8d0c-2a8d8235f170.JPG)
 
 
