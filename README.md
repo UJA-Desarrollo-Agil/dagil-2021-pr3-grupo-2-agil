@@ -71,3 +71,9 @@ organizar la manera de narrar la historia, mejorar el final, pulir detalles de d
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/Ultima.png?raw=true)
 
 ### Captura de pantalla de las HU del Product Backlog  una vez acabado el sprint
+
+![final_product_backlog1](https://user-images.githubusercontent.com/78825172/115298410-bc699a80-a15d-11eb-9942-396d70cf02ad.png)
+
+![final_product_backlog2](https://user-images.githubusercontent.com/78825172/115298693-136f6f80-a15e-11eb-992e-bf87f1ebbd18.png)
+
+![final_product_backlog3](https://user-images.githubusercontent.com/78825172/115298722-1b2f1400-a15e-11eb-8017-afbace9f4acd.png)
