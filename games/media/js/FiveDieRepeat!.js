@@ -23,7 +23,7 @@ undum.game.slideUpSpeed = 500;
 undum.game.situations = {
     inicio: new undum.SimpleSituation(
 
-        "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+        "<H1><a href='bibliomusica' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
@@ -167,7 +167,7 @@ undum.game.situations = {
     ),
 
     biblioteca: new undum.SimpleSituation(
-    "<p>Hoy nuestro estudiante  decidió\
+    "<p>Ya que hoy nuestro estudiante decidió\
         ir a la biblioteca con un amigo. \
          <a href='dudasamigo'>Preguntar dudas que le surgen a su compañero</a> \
          <a href='bibliomusica'>Ponerse musica para estudiar</a> \
@@ -185,7 +185,8 @@ undum.game.situations = {
   ),
 
    dudasamigo: new undum.SimpleSituation(
-   "<p>Le preguntamos a nuestro amigo por una duda que nos ha surgido mientras estudiabamos.</a></p>", {
+   "<p>Le preguntamos a nuestro amigo por una duda que nos ha surgido mientras estudiabamos, y nos contesta\n\
+    que lo que deberia ir es a <a href='particulares'>clases particulares.</a></p>", {
      enter: function(character, system, from) {
        system.animateQuality("interes", character.qualities.interes+30);
        system.animateQuality("apuntes", character.qualities.apuntes+1);
@@ -200,7 +201,7 @@ undum.game.situations = {
  ),
 
  bibliomusica: new undum.SimpleSituation(
- "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la biblioteca</a></p>", {
+ "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la <a href='biblioteca'>biblioteca</a></p>", {
    enter: function(character, system, from) {
      system.animateQuality("interes", character.qualities.interes-20);
      system.animateQuality("conocimiento", character.qualities.conocimiento+10);
@@ -214,7 +215,9 @@ undum.game.situations = {
 ),
 
 verordenador: new undum.SimpleSituation(
-"<p>Nos distraemos con el ordenador (Viendo Twitter,Memes...)</p>", {
+"<p>Nos distraemos con el ordenador (Viendo Twitter,Memes...)asi que como vemos que esto no nos lleva a ninguna parte\n\
+decidimos ir a dar <a href='irparticulares'>clases particulares</a> pero un momento...al entrar en Docencia Virtual un rato\n\
+estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>voluntario.</a></p>", {
  enter: function(character, system, from) {
    system.animateQuality("interes", character.qualities.interes-80);
    system.animateQuality("conocimiento", character.qualities.conocimiento-20);
@@ -227,7 +230,8 @@ verordenador: new undum.SimpleSituation(
 ),
 
 particulares: new undum.SimpleSituation(
-"<p>Nuestro estudiante toma la decisión de apuntarse a una academia para afrontar la asignatura.</p>", {
+"<p>Nuestro estudiante toma la decisión de apuntarse a una academia para afrontar la asignatura.\n\
+    pero mientras decide o no...piensa en <a href='verordenador'>distraerse mirando el ordenador.</a></p>", {
  enter: function(character, system, from) {
    system.animateQuality("pasta", character.qualities.pasta-150);
  },
