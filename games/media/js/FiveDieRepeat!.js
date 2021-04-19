@@ -243,7 +243,8 @@ particulares: new undum.SimpleSituation(
 ),
 
 irparticulares: new undum.SimpleSituation(
-"<p>Nuestro estudiante se ha levantado productivo y va hacia la academia para mejorar en la asignatura</p>", {
+    "<p>Nuestro estudiante se ha levantado productivo y va hacia la academia para mejorar en la asignatura</p>\
+        <p><a href='voluntario'>Continuar.</a></p>", {
  enter: function(character, system, from) {
    system.animateQuality("interes", character.qualities.interes+80);
    system.animateQuality("conocimiento", character.qualities.conocimiento+50);
@@ -359,7 +360,8 @@ noirparticulares: new undum.SimpleSituation(
     faltar1: new undum.SimpleSituation(
         "<p>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
           <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
-          <p><a href='voluntario'>Continuar historia.</a></p>",
+          <p><a href='ir_tutoria'>Ir a la tutoría de mañana.</a></p>\
+            <p><a href='no_ir_tutoria'>No ir a la tutoría de mañana.</a></p>",
         {
             heading: "Decides faltar el miércoles ",
 			enter: function(character, system, to) {
@@ -459,7 +461,8 @@ noirparticulares: new undum.SimpleSituation(
     ),
 
     voluntario1: new undum.SimpleSituation(
-        "<p>Para hacer el ejercicio a prisa prefieres no entregar nada. En más de una asisgnatura has acabado suspendiendo a pesar de no haber los ejercicios voluntarios.</p><p>Además el profesor podría haber avisado.</p>",
+        "<p>Para hacer el ejercicio a prisa prefieres no entregar nada. En más de una asisgnatura has acabado suspendiendo a pesar de no haber los ejercicios voluntarios.</p><p>Además el profesor podría haber avisado.</p>\
+        <p><a href='clase'>Continuar.</a></p>",
         {
             heading: "Decides no entregar ejercicio voluntario",
             enter: function (character, system, to) {
@@ -478,7 +481,8 @@ noirparticulares: new undum.SimpleSituation(
     voluntario2: new undum.SimpleSituation(
         "<p>Aunque queda poco y habías quedado para ir al cine decides ponerte a hacer el ejercicio.</p>\
         <p>Aprobar esta asignatura es el pricipal objetivo este año, harás todo lo que esté en tu mano.</p>\
-        <p>Quizás si el profesor ve que has entregado todos los ejercicios volutarios te aprueba en caso de duda.</p>",
+        <p>Quizás si el profesor ve que has entregado todos los ejercicios volutarios te aprueba en caso de duda.</p>\
+        <p><a href='clase'>Continuar.</a></p>",
         {
             heading: "Decides entregar ejercicio voluntario",
             enter: function (character, system, to) {
