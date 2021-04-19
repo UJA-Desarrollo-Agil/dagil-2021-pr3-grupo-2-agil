@@ -38,7 +38,7 @@ Los siguientes seleccionados no son innegociables pero también tienen un valor 
 
 ### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint
 ![CapturaHUdescompuestas](https://user-images.githubusercontent.com/78795117/115222525-1c832100-a10b-11eb-8eff-0b4be9e8ef2d.JPG)
-![CapturaHUdescompuestas2](https://user-images.githubusercontent.com/78795117/115221908-71726780-a10a-11eb-8d0c-2a8d8235f170.JPG)
+![image](https://user-images.githubusercontent.com/78794703/115254940-1fdbd400-a12e-11eb-843c-9f49afcf932d.png)
 
 ### Capturas de pantalla del Product Backlog y del Sprint Backlog tras las modificaciones  realizadas en el Product Backlog Refinement
 ![image](https://user-images.githubusercontent.com/78794703/115246999-ac829400-a126-11eb-8248-3e7f695cc7ad.png)
@@ -51,10 +51,10 @@ Los siguientes seleccionados no son innegociables pero también tienen un valor 
 
 En cuanto al Sprint Backlog se ha elegido un reparto más o menos equitativo de valor entre los dos Sprints. 
 
-Se optado por una motodología de trabajo en la que la mayoria de las historias de usuario se implementan de forma conjunta y equitativa. Solo las de menor duración o
+Se optado por una metodología de trabajo en la que la mayoría de las historias de usuario se implementan de forma conjunta y equitativa. Solo las de menor duración o
 de complejidad, en concreto tres, han sido asignadas a una sola persona.
 
-Durante el desarrollo se han tenido problemas con la página de inicio del juego que han sido solucionados mediante la documentación sobre css.
+Durante el desarrollo se han tenido problemas con la página de inicio del juego que han sido solucionados mediante la documentación sobre css. 
 
 ### Conclusiones obtenidas en la Sprint Retrospective
 
