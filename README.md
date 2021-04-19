@@ -58,6 +58,15 @@ Durante el desarrollo se han tenido problemas con la página de inicio del juego
 
 ### Conclusiones obtenidas en la Sprint Retrospective
 
+Cuales son las cosas a mejorar:
+- Eliminar diferencias entre las situaciones creadas por cada uno de los miembros, mejorar la narrativa de la historia, concretar los objetivos a cumplir para finalizar la historia.
+Que funciono bien:
+- Reparto de tareas, trabajar en ramas individuales, elecciones de requisitos a implementar (carga de trabajo).
+Problemas que haya tenido para progresar:
+- El desconocimiento en algunas de las funciones a implementar, actualizar la rama master directamente desde lo git, incompatibilidad de horarios, división de los requisitos para ser asignados.
+Recomendaciones para el siguiente sprint
+- organizar la manera de narrar la historia, mejorar el final, pulir detalles de diseño.
+
 ### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/Ultima.png?raw=true)
 
