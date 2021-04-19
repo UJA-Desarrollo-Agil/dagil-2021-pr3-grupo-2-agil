@@ -113,14 +113,14 @@ undum.game.situations = {
     ),
 
      faltar: new undum.SimpleSituation(
-         "<p>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'> faltar el jueves</a>para tener tiempo a hacer todas las prácticas.\
+         "<p>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'> faltar el jueves</a> para tener tiempo a hacer todas las prácticas.\
             </p><p>Ninguna de las dos es una buena decisión pero no te queda otra.</p>",
         {
             heading: "Tienes que faltar un día a clase",
             enter: function (character, system, to) {
 
                 system.setQuality("interes", character.qualities.interes - 3);
-                system.setQuality("pasta", character.qualities.pasta - 22);
+                system.setQuality("pasta", character.qualities.pasta - 10);
 
 
             }
