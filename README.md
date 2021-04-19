@@ -30,7 +30,16 @@ https://trello.com/b/BcKd7EVj/practica-3-%C3%A1gil
 ## Sprint 1
 
 ### Captura de pantalla de las HU Y explicación
-### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint
+![CapturaHU](https://user-images.githubusercontent.com/78795117/115220137-7fbf8400-a108-11eb-8e50-636aef6dc6d5.JPG)
+
+Explicación:
+Seleccionamos estas 7 HU, de las cuales 3 son innegociables y tienen un valor máximo para nosotros. Son una prioridad que decidimos afrontar en el Sprint.
+Los siguientes seleccionados no son innegociables pero también tienen un valor interesante y no son complicados de hacer, por lo que decidimos afrontarlos antes y dejarlo hecho para un futuro.
+### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint.
+![CapturaHUdescompuestas](https://user-images.githubusercontent.com/78795117/115221672-34a67080-a10a-11eb-92cf-f4eb83af4619.JPG)
+![CapturaHUdescompuestas2](https://user-images.githubusercontent.com/78795117/115221908-71726780-a10a-11eb-8d0c-2a8d8235f170.JPG)
+
+
 ### Capturas de pantalla del Product Backlog y del Sprint Backlog tras las modificaciones  realizadas en el Product Backlog Refinement
 ### Conclusiones obtenidas en la Sprint Review
 ### Conclusiones obtenidas en la Sprint Retrospective
