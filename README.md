@@ -49,6 +49,12 @@ Los siguientes seleccionados no son innegociables pero también tienen un valor 
 
 ### Conclusiones obtenidas en la Sprint Review
 
+En cuanto al Sprint Backlog se ha elegido un reparto más o menos equitativo de valor entre los dos Sprints. 
+
+Se optado por una motodología de trabajo en la que la mayoria de las historias de usuario se implementan de forma conjunta y equitativa. Solo las de menor duración o
+de complejidad, en concreto tres, han sido asignadas a una sola persona.
+
+Durante el desarrollo se han tenido problemas con la página de inicio del juego que han sido solucionados mediante la documentación sobre css.
 
 ### Conclusiones obtenidas en la Sprint Retrospective
 
