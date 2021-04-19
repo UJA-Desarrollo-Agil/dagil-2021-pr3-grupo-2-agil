@@ -59,5 +59,6 @@ Durante el desarrollo se han tenido problemas con la página de inicio del juego
 ### Conclusiones obtenidas en la Sprint Retrospective
 
 ### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
+![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/Ultima.png?raw=true)
 
 ### Captura de pantalla de las HU del Product Backlog  una vez acabado el sprint
