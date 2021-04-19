@@ -21,8 +21,8 @@ undum.game.slideUpSpeed = 500;
 
 /* SITUACIONES DEL JUEGO. CADA UNA CON UN UNICO ID. */
 undum.game.situations = {
-    inicio: new undum.SimpleSituation(            
-            
+    inicio: new undum.SimpleSituation(
+
         "<H1><a href='nuevojuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
@@ -38,9 +38,133 @@ undum.game.situations = {
     ),
     salir: new undum.SimpleSituation(
             "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
-            
-            
-    )
+
+
+    ),
+    ir_tutoria: new undum.SimpleSituation(
+      "<p>Nuestro estudiante se decidió\
+          finalmente por ir a la tutoría. Al terminar la tutoría todo le quedo más claro\
+           y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
+        enter: function(character, system, from) {
+          system.animateQuality("interes", character.qualities.interes+10);
+          system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+        },
+
+        heading: "Ir a tutoría",
+        diplayOrder: 3,
+        tags: ["tutoria"],
+
+      }
+    ),
+
+    no_ir_tutoria: new undum.SimpleSituation(
+      "<p>Nuestro estudiante se decicido\
+          por no ir a la tutoría e intetar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
+          sacar la practica adelante\
+           <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
+             enter: function(character, system, from) {
+               system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+             },
+
+        heading: "Estudiar por mi cuenta",
+        diplayOrder: 3,
+        tags: ["tutoria"],
+
+      }
+    ),
+
+
+    seguir_estudiando: new undum.SimpleSituation(
+      "<p>Después de un día agotador\
+        nuestro estudiante quiso seguir estudiando, al llevar todo el día estudiando y exigirse demasiado no solo no aprendió\
+        nada sino que empezó a confundir términos, al no descansar adecuadamente su rendimiento académico bajo\
+        a la mañana siguiente se despertó con varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>", {
+        enter: function(character, system, from) {
+          system.animateQuality("conocimiento", character.qualities.conocimiento-10);
+          system.animateQuality("interes", character.qualities.interes-10);
+        },
+
+        heading: "Continuar estudiando",
+        diplayOrder: 3,
+        tags: ["estudiar"],
+
+      }
+    ),
+
+    no_estudiar: new undum.SimpleSituation(
+      "<p>Al ver que no rendía más nuestro estudiante decidió dejar de  estudiar\
+          e irse temprano a la cama, a la mañana siguiente se sentía más productivo y con ganas de afrontar nuevos\
+          retos, al mirar el móvil tenia varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>",
+
+            {
+             enter: function(character, system, from) {
+               system.animateQuality("interes", character.qualities.interes+10);
+             },
+
+        heading: "Descansar",
+        diplayOrder: 3,
+        tags: ["estudiar"],
+
+      }
+    ),
+
+    debo_dejar_practica: new undum.SimpleSituation(
+      "<h1 class='transient'>Dejar las practicas</h1>\
+      <p>Un compañero de clase te pide las prácticas que terminaste la semana pasada, sabes que el profesor advirtió\
+      en numerosas ocasiones que la copia de ejercicios esta castigada con un 0 en esa practica, pero tu no quieres que el compañéro\
+      suspenda <a href='dejar_practica'>¿Debería dejársela?</a> o <a href='no_dejar_practica'>¿Debería no dejársela?</a>  </p>",
+
+        {
+
+
+        // heading: "Dejar Practica",
+        // diplayOrder: 3,
+        // tags: ["dejar_practica"],
+
+      }
+    ),
+
+    dejar_practica: new undum.SimpleSituation(
+      "<p> Asumes un riesgo para que tu compañero pueda aprobar esa practica ¿Te salió rentable? o ¿simplemente \
+        echaste a perder todo tu trabajo?\
+       <a href='tutoria'>¿Debería no dejarsela?</a>  </p>",
+
+        {
+          enter: function(character, system, from) {
+            var aleatorio = Math.floor(Math.random() * 11);
+            if (aleatorio > 5){
+                system.animateQuality("interes", character.qualities.interes-20);
+                system.setCharacterText("<p>El profesor me puso un 0 por copia</p>");
+            }else{
+                system.setCharacterText("<p>El profesor no se dio cuenta de que le deje las prácticas</p>");
+            }
+
+
+          },
+
+
+        // heading: "Dejar Practica",
+        // diplayOrder: 3,
+        // tags: ["dejar_practica"],
+
+      }
+    ),
+
+    no_dejar_practica: new undum.SimpleSituation(
+      "<p> Le explicas que lo mejor para los dos es no dejar la practica ya que no ayuda a ninguna de las partes\
+        y pones en riego el trabajo de tu compañero, el compañero parece que lo entiendo y te pide ayuda para la próximas practicas\
+        tu encantado le ayudaras.\
+       <a href='tutoria'>¿Debería o no dejársela?</a>  </p>",
+
+        {
+
+
+        heading: "Dejar Practica",
+        diplayOrder: 3,
+        tags: ["dejar_practica"],
+
+      }
+    ),
 };
 
 // ---------------------------------------------------------------------------
