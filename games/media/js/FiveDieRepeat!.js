@@ -279,6 +279,9 @@ noirparticulares: new undum.SimpleSituation(
             heading: "Un Día Normal de clase",
            
             enter: function(character, system, to) {
+				system.setCharacterText(
+                    "<p>Progreso del juego 5%</p>"
+                );
                 
                 system.setQuality("interes", character.qualities.interes + 2);
                 system.setQuality("pasta", character.qualities.pasta - 30);
@@ -318,7 +321,7 @@ noirparticulares: new undum.SimpleSituation(
     ),
 
     clase2: new undum.SimpleSituation(
-        "<p>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
+        "<p><img src='media/img/bus.png' class='float_right'>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
 		<p>Te dirijes hacia la parada de autobús mas cercana. Aunque vas escuchando música la espera se te hace infinita. Es bus ha llegado veinte minutos tarde. </p>\
 		<p>Por fin estas dentro. Te sientas en el último asiento, cerca del motor. Tras dos minutos de trayecto se oye como un crujido en el motor y se detiene súbitamente.</p>\
 		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase. Prácticamente como si no hubieras ido.\
@@ -358,13 +361,14 @@ noirparticulares: new undum.SimpleSituation(
 
     ),
     faltar1: new undum.SimpleSituation(
-        "<p>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
+        "<p><img src='media/img/pensar.png' class='float_right'>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
           <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
           <p><a href='ir_tutoria'>Ir a la tutoría de mañana.</a></p>\
             <p><a href='no_ir_tutoria'>No ir a la tutoría de mañana.</a></p>",
         {
             heading: "Decides faltar el miércoles ",
 			enter: function(character, system, to) {
+				
                 system.setCharacterText(
                     "<p>Han pasado lista y han hecho ejercicios.</p>"
                 );
