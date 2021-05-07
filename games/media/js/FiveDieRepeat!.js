@@ -485,7 +485,7 @@ noirparticulares: new undum.SimpleSituation(
     ),
 
     voluntario: new undum.SimpleSituation(
-        "<p>Estabas mirando Docencia Virtual tranquilamente y observas que hay una entrega de actividad voluntaria para dentro de cinco horas.\
+        "<p><img src='media/img/libro.png' class='float_right'>Estabas mirando Docencia Virtual tranquilamente y observas que hay una entrega de actividad voluntaria para dentro de cinco horas.\
         <p>Te surje la duda sobre si es obligatorio o no entregarla. Este tipo de actividades casi nunca tienen valor y además pone que es voluntaria.\
         <p>\ <p><a href='voluntario2'>Entregar el ejercicio.</a> </p><p><a href='voluntario1'>No entregar el ejercicio</a>. </p><p><a href='guia'>Mirar detalladamente</a> en la guía docente para salir de dudas.</p></p > ",
         {
