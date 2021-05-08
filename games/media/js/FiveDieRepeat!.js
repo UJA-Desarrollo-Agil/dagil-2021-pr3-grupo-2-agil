@@ -23,7 +23,7 @@ undum.game.slideUpSpeed = 500;
 undum.game.situations = {
     inicio: new undum.SimpleSituation(
 
-        "<H1><a href='bibliomusica' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+        "<H1><a href='iniciohistoria' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
@@ -40,6 +40,33 @@ undum.game.situations = {
             "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
 
 
+    ),
+	
+	iniciohistoria: new undum.SimpleSituation(
+      "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
+	  Este cuatrimestre cursas la asignatura más difícil de la carrera. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.</p><p><a href='biblioteca'> Comenzar el cuatrimestre</a></p>", {
+        enter: function(character, system, from) {
+			system.setCharacterText(
+                    "<p>Progreso del juego 0%</p>"
+			);
+          
+        },
+			heading: "Fin de las vacaciones",
+
+      }
+    ),
+	iniciohistoria2: new undum.SimpleSituation(
+      "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de... ¡Un momento, esto ya lo has vivido!  \
+	  Acabas de viajar al pasado tras suspender el examen. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.  No debes desaprovechar esta oportunidad</p><p><a href='biblioteca'> Volver a comenzar el cuatrimestre</a></p>", {
+        enter: function(character, system, from) {
+			system.setCharacterText(
+                    "<p>Progreso del juego 0%</p>"
+			);
+          
+        },
+			heading: "Fin de las vacaciones",
+
+      }
     ),
     ir_tutoria: new undum.SimpleSituation(
       "<p><img src='media/img/duda.png' class='float_right' style=\"max-width: 40%;\"> Nuestro estudiante se decidió\
@@ -192,9 +219,9 @@ undum.game.situations = {
     biblioteca: new undum.SimpleSituation(
     "<p>Ya que hoy nuestro estudiante decidió\
         ir a la biblioteca con un amigo. \
-         <a href='dudasamigo'>Preguntar dudas que le surgen a su compañero</a> \
-         <a href='bibliomusica'>Ponerse musica para estudiar</a> \
-         <a href='verordenador'>Mirar ordenador un rato</a></p>", {
+         </p><p><a href='dudasamigo'>Preguntar dudas que le surgen a su compañero.</a></p> \
+         </p><p><a href='bibliomusica'>Ponerse musica para estudiar.</a></p> \
+         </p><p><a href='verordenador'>Mirar ordenador un rato.</a></p>", {
       enter: function(character, system, from) {
 		  system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
@@ -222,7 +249,7 @@ undum.game.situations = {
        system.animateQuality("conocimiento", character.qualities.conocimiento+50);
      },
 
-     heading: "Resolviendo dudas con amigo",
+     heading: "Un día en la biblioteca",
      diplayOrder: 3,
      tags: ["dudasamigo"],
 
