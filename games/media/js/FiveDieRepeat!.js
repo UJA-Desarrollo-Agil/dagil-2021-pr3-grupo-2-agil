@@ -41,7 +41,7 @@ undum.game.situations = {
 
 
     ),
-	
+
 	iniciohistoria: new undum.SimpleSituation(
       "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
 	  Este cuatrimestre cursas la asignatura más difícil de la carrera. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.</p><p><a href='biblioteca'> Comenzar el cuatrimestre</a></p>", {
@@ -49,7 +49,7 @@ undum.game.situations = {
 			system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 			);
-          
+
         },
 			heading: "Fin de las vacaciones",
 
@@ -62,7 +62,7 @@ undum.game.situations = {
 			system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 			);
-          
+
         },
 			heading: "Fin de las vacaciones",
 
@@ -556,7 +556,7 @@ noirparticulares: new undum.SimpleSituation(
     ),
 
     voluntario1: new undum.SimpleSituation(
-        "<p>Para hacer el ejercicio a prisa prefieres no entregar nada. En más de una asisgnatura has acabado suspendiendo a pesar de no haber los ejercicios voluntarios.</p><p>Además el profesor podría haber avisado.</p>\
+        "<p>Para hacer el ejercicio a prisa prefieres no entregar nada. En más de una asignatura has acabado suspendiendo a pesar de haber entregado los ejercicios voluntarios.</p><p>Además el profesor podría haber avisado.</p>\
         <p><a href='clase'>Continuar.</a></p>",
         {
             heading: "Decides no entregar ejercicio voluntario",
