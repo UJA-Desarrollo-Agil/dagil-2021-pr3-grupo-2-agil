@@ -42,7 +42,7 @@ undum.game.situations = {
 
     ),
     ir_tutoria: new undum.SimpleSituation(
-      "<p>Nuestro estudiante se decidió\
+      "<p><img src='media/img/duda.png' class='float_right' style=\"max-width: 40%;\"> Nuestro estudiante se decidió\
           finalmente por ir a la tutoría. Al terminar la tutoría todo le quedo más claro\
            y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
         enter: function(character, system, from) {
@@ -81,7 +81,7 @@ undum.game.situations = {
 
 
     seguir_estudiando: new undum.SimpleSituation(
-      "<p>Después de un día agotador\
+      "<p><img src='media/img/descansar.gif' class='float_right' style=\"max-width: 70%;\">Después de un día agotador\
         nuestro estudiante quiso seguir estudiando, al llevar todo el día estudiando y exigirse demasiado no solo no aprendió\
         nada sino que empezó a confundir términos, al no descansar adecuadamente su rendimiento académico bajo\
         a la mañana siguiente se despertó con varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>", {
@@ -101,7 +101,7 @@ undum.game.situations = {
     ),
 
     no_estudiar: new undum.SimpleSituation(
-      "<p>Al ver que no rendía más nuestro estudiante decidió dejar de  estudiar\
+      "<p><img src='media/img/descansar.png' class='float_right' style=\"max-width: 45%;\">Al ver que no rendía más nuestro estudiante decidió dejar de  estudiar\
           e irse temprano a la cama, a la mañana siguiente se sentía más productivo y con ganas de afrontar nuevos\
           retos, al mirar el móvil tenia varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>",
 
@@ -122,7 +122,7 @@ undum.game.situations = {
 
     debo_dejar_practica: new undum.SimpleSituation(
       "<h1 class='transient'>Dejar las practicas</h1>\
-      <p>Un compañero de clase te pide las prácticas que terminaste la semana pasada, sabes que el profesor advirtió\
+      <p><img src='media/img/compañero.png' class='float_right' style=\"max-width: 45%;\">Un compañero de clase te pide las prácticas que terminaste la semana pasada, sabes que el profesor advirtió\
       en numerosas ocasiones que la copia de ejercicios esta castigada con un 0 en esa practica, pero tu no quieres que el compañéro\
       suspenda <a href='dejar_practica'>¿Debería dejársela?</a> o <a href='no_dejar_practica'>¿Debería no dejársela?</a>  </p>",
 
@@ -312,7 +312,7 @@ noirparticulares: new undum.SimpleSituation(
    }
 
 ),
-    
+
     clase: new undum.SimpleSituation(
         "<p><img src='media/img/despertador.gif' class='float_right'>Son las ocho de la mañana y despues de desactivar cuatro alarmas por fín te levantas de la cama. Estás hecho polvo tras trasnochar haciendo la práctica de Desarrollo Ágil.\
         </p><p>Aún es prácticamente de noche, no ha salido apenas el sol. Vas a desayunar y no queda leche. Vaya manera de empezar el día.</p>\
@@ -321,16 +321,16 @@ noirparticulares: new undum.SimpleSituation(
         </p> ",
         {
             heading: "Un Día Normal de clase",
-           
+
             enter: function(character, system, to) {
 				system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 				);
-                
+
                 system.setQuality("interes", character.qualities.interes + 2);
                 system.setQuality("pasta", character.qualities.pasta - 30);
 
-   
+
             }
         }
 
@@ -346,9 +346,9 @@ noirparticulares: new undum.SimpleSituation(
 				system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 				);
-                
+
                 system.setQuality("interes", character.qualities.interes - 2);
-   
+
             },
             actions: {
                 "tomarapuntes": function (character, system, action) {
@@ -361,8 +361,8 @@ noirparticulares: new undum.SimpleSituation(
 
                 }
             },
-           
-            
+
+
         }
 
     ),
@@ -373,7 +373,7 @@ noirparticulares: new undum.SimpleSituation(
 		<p>Por fin estas dentro. Te sientas en el último asiento, cerca del motor. Tras dos minutos de trayecto se oye como un crujido en el motor y se detiene súbitamente.</p>\
 		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase. Prácticamente como si no hubieras ido.\
            <p><a href='faltar'>Continuar historia.</a></p>",
-		
+
 		{
             heading: "Has decidido ir a clase andando",
             enter: function(character, system, to) {
@@ -386,9 +386,9 @@ noirparticulares: new undum.SimpleSituation(
                 system.setQuality("conocimiento", character.qualities.conocimiento - 10);
                 system.setQuality("pasta", character.qualitiespasta - 1);
 
-   
+
             }
-            
+
         }
 
     ),
@@ -408,8 +408,8 @@ noirparticulares: new undum.SimpleSituation(
 
 
             }
-           
-            
+
+
         }
 
     ),
@@ -430,7 +430,7 @@ noirparticulares: new undum.SimpleSituation(
                 system.setQuality("conocimiento", character.qualities.conocimiento - 15);
                 system.setQuality("interes", character.qualities.interes - 5);
 
-   
+
             },
             actions: {
                 "pedirapuntes": function (character, system, action) {
@@ -444,8 +444,8 @@ noirparticulares: new undum.SimpleSituation(
                 }
             }
 
-           
-            
+
+
         }
 
     ),
@@ -465,7 +465,7 @@ noirparticulares: new undum.SimpleSituation(
                 system.setQuality("conocimiento", character.qualities.conocimiento - 1);
                 system.setQuality("interes", character.qualities.interes - 1);
 
-   
+
             },
             actions: {
                 "pedirapuntes": function (character, system, action) {
@@ -478,8 +478,8 @@ noirparticulares: new undum.SimpleSituation(
 
                 }
             }
-           
-            
+
+
         }
 
     ),
@@ -494,14 +494,14 @@ noirparticulares: new undum.SimpleSituation(
 				system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 				);
-               
-                
+
+
                 system.setQuality("pasta", character.qualities.pasta - 10);
 
 
             },
-           
-            
+
+
         }
 
     ),
@@ -537,14 +537,14 @@ noirparticulares: new undum.SimpleSituation(
 				system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 				);
-               
+
                 system.setQuality("conocimiento", character.qualities.conocimiento - 5);
                 system.setQuality("interes", character.qualities.interes - 5);
 
 
             }
-           
-            
+
+
         }
 
     ),
@@ -566,8 +566,8 @@ noirparticulares: new undum.SimpleSituation(
 
 
             }
-           
-            
+
+
         }
 
     ),
