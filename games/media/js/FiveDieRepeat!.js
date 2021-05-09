@@ -41,17 +41,26 @@ undum.game.situations = {
 
 
     ),
+	
 
 	iniciohistoria: new undum.SimpleSituation(
       "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
-	  Este cuatrimestre cursas la asignatura más difícil de la carrera. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.</p><p><a href='biblioteca'> Comenzar el cuatrimestre</a></p>", {
+	  Este cuatrimestre cursas la asignatura más difícil de la carrera. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.</p><p><a href='./ayuda'> ¿Necesitas ayuda?</a><p><a href='biblioteca'> Comenzar el cuatrimestre.</a></p>", {
         enter: function(character, system, from) {
 			system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
 			);
 
         },
-			heading: "Fin de las vacaciones",
+			heading: "1 de Febrero: Fin de las vacaciones",
+			actions: {
+                "ayuda": function (character, system, action) {
+                    system.setCharacterText(
+                        "<p>Debes conseguir los máximos puntos de conocimiento así como los apuntes para aprobar el examen.</p>"
+                    );
+                   
+                }
+            },
 
       }
     ),
@@ -73,10 +82,10 @@ undum.game.situations = {
           finalmente por ir a la tutoría. \
           <p> Buenos dias Profesor, tengo una duda con esta práctica. No entiendo porque no me compila. -dice sentandose en el despacho del profesor</p> \
           <p> Buenos dias Alumno, por lo que puedo ver, no estás inicializando bien esta variable y te da error aqui. Compruebalo y me dices. -dice señalando el error </p> \
-          <p>Al terminar la tutoría todo le quedo más claro y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
+          <p>Al terminar la tutoría todo le quedo más claro y pudo completar sin ninguna dificultad sus prácticas. <a href='finaprobado'>Continuar.</a></p>", {
         enter: function(character, system, from) {
 			system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 90%</p>"
 			);
           system.animateQuality("interes", character.qualities.interes+10);
           system.animateQuality("conocimiento", character.qualities.conocimiento+10);
@@ -93,15 +102,15 @@ undum.game.situations = {
       "<p>Nuestro estudiante se decicido\
           por no ir a la tutoría e intentar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
           sacar la practica adelante\
-           <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
+           <a href='finaprobado'>Continuar.</a></p>", {
              enter: function(character, system, from) {
 				 system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 90%</p>"
 				);
                system.animateQuality("conocimiento", character.qualities.conocimiento+10);
              },
 
-        heading: "Estudiar por mi cuenta",
+        heading: "No ir a tutoría",
         diplayOrder: 3,
         tags: ["tutoria"],
 
@@ -116,7 +125,7 @@ undum.game.situations = {
         a la mañana siguiente se despertó con varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>", {
         enter: function(character, system, from) {
 		  system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 75%</p>"
 			);
           system.animateQuality("conocimiento", character.qualities.conocimiento-10);
           system.animateQuality("interes", character.qualities.interes-10);
@@ -137,7 +146,7 @@ undum.game.situations = {
             {
              enter: function(character, system, from) {
 				 system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 75%</p>"
 				);
                system.animateQuality("interes", character.qualities.interes+10);
              },
@@ -158,7 +167,7 @@ undum.game.situations = {
         {
 			enter: function(character, system, from) {
 				 system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 80%</p>"
 				);
 			},
 
@@ -172,12 +181,12 @@ undum.game.situations = {
     dejar_practica: new undum.SimpleSituation(
       "<p> Asumes un riesgo para que tu compañero pueda aprobar esa practica ¿Te salió rentable? o ¿simplemente \
         echaste a perder todo tu trabajo?\
-       <a href='tutoria'>¿Debería no dejarsela?</a>  </p>",
+       <a href='tutoria'>Continuar.</a>  </p>",
 
         {
           enter: function(character, system, from) {
 			  system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 85%</p>"
 				);
             var aleatorio = Math.floor(Math.random() * 11);
             if (aleatorio > 5){
@@ -202,7 +211,7 @@ undum.game.situations = {
       "<p> Le explicas que lo mejor para los dos es no dejar la practica ya que no ayuda a ninguna de las partes\
         y pones en riego el trabajo de tu compañero, el compañero parece que lo entiendo y te pide ayuda para la próximas practicas\
         tu encantado le ayudaras.\
-       <a href='tutoria'>¿Debería o no dejársela?</a>  </p>",
+       <a href='tutoria'>Continuar</a>  </p>",
 
         {
 			enter: function(character, system, from) {
@@ -232,7 +241,7 @@ undum.game.situations = {
         system.animateQuality("conocimiento", character.qualities.conocimiento+10);
       },
 
-      heading: "Biblioteca con un amigo",
+      heading: "15 de Febrero: Biblioteca con un amigo",
       diplayOrder: 3,
       tags: ["biblioteca"],
 
@@ -280,13 +289,13 @@ undum.game.situations = {
  "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la <a href='biblioteca'>biblioteca</a></p>", {
    enter: function(character, system, from) {
 	   system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 1%</p>"
        );
      system.animateQuality("interes", character.qualities.interes-20);
      system.animateQuality("conocimiento", character.qualities.conocimiento+10);
    },
 
-   heading: "Musica en la biblioteca",
+   heading: "Duda",
    diplayOrder: 3,
    tags: ["bibliomusica"],
 
@@ -331,7 +340,7 @@ irparticulares: new undum.SimpleSituation(
         <p><a href='voluntario'>Continuar.</a></p>", {
  enter: function(character, system, from) {
 	 system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 17%</p>"
 				);
    system.animateQuality("interes", character.qualities.interes+80);
    system.animateQuality("conocimiento", character.qualities.conocimiento+50);
@@ -347,7 +356,7 @@ noirparticulares: new undum.SimpleSituation(
 "<p>Nuestro estudiante se ha levantado vaguete y no va</p>", {
  enter: function(character, system, from) {
 	 system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 17%</p>"
 				);
    system.animateQuality("interes", character.qualities.interes-80);
    system.animateQuality("conocimiento", character.qualities.conocimiento-100);
@@ -366,7 +375,7 @@ noirparticulares: new undum.SimpleSituation(
         <p >\Sin embargo, por lo menos parece que va a hacer una buena mañana. Te surje una duda existencial. Debes decidir entre <a href='clase1'>ir andando</a> o <a href='clase2'>ir en autobus</a> a clase.\
         </p> ",
         {
-            heading: "Un Día Normal de clase",
+            heading: "17 de Marzo: Un Día Normal de clase",
 
             enter: function(character, system, to) {
 				system.setCharacterText(
@@ -443,10 +452,10 @@ noirparticulares: new undum.SimpleSituation(
          "<p><img src='media/img/pensar.png' class='float_right'>No te has planificado nada bien. Se te han juntado la práctica de Desarrollo Ágil con la de Concurrentes y Calidad del Software. Debes decicir entre <a href='faltar1'>faltar el miércoles</a> o <a href='faltar2'> faltar el jueves</a> para tener tiempo a hacer todas las prácticas.\
             </p><p>Ninguna de las dos es una buena decisión pero no te queda otra.</p>",
         {
-            heading: "Tienes que faltar un día a clase",
+            heading: "23 de Marzo: Faltar un día a clase",
             enter: function (character, system, to) {
 				system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 50%</p>"
 				);
 
                 system.setQuality("interes", character.qualities.interes - 3);
@@ -462,13 +471,13 @@ noirparticulares: new undum.SimpleSituation(
     faltar1: new undum.SimpleSituation(
         "<p>Hablando por WhatsApp con tu amigo Manolo te dice que el profesor ha explicado uno de los temas más difíciles. Además, han pasado lista.</p>\
           <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
-          <p><a href='ir_tutoria'>Ir a la tutoría de mañana.</a></p>\
-            <p><a href='no_ir_tutoria'>No ir a la tutoría de mañana.</a></p>",
+          \
+            <p><a href='estudiar'>Continuar historia.</a></p>",
         {
             heading: "Decides faltar el miércoles ",
 			enter: function(character, system, to) {
 				system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 60%</p>"
 				);
                 system.setCharacterText(
                     "<p>Han pasado lista y han hecho ejercicios.</p>"
@@ -498,12 +507,13 @@ noirparticulares: new undum.SimpleSituation(
     faltar2: new undum.SimpleSituation(
         "<p>Hablando por WhatsApp con tu amigo Manolo te dice que se ha puesto a leer diapositivas y no te has perdido gran cosa.</p>\
         <p><a href='./pedirapuntes'>Pedir que te pase los apuntes.</a></p>\
-          <p><a href='voluntario'>Continuar historia.</a></p>",
+          \
+            <p><a href='estudiar'>Continuar historia.</a></p></p>",
         {
             heading: "Decides faltar el jueves",
 			enter: function(character, system, to) {
 				system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 60%</p>"
 				);
                 system.setCharacterText(
                     "<p>No te has perdido gran cosa.</p>"
@@ -559,7 +569,7 @@ noirparticulares: new undum.SimpleSituation(
             heading: "Guía docente de la asignatura",
             enter: function (character, system, to) {
 				system.setCharacterText(
-                    "<p>Progreso del juego 0%</p>"
+                    "<p>Progreso del juego 22%</p>"
 				);
                 system.setCharacterText(
                     "<p>No te has perdido gran cosa.</p>"
@@ -616,6 +626,35 @@ noirparticulares: new undum.SimpleSituation(
 
         }
 
+    ),
+	
+	finaprobado: new undum.SimpleSituation(
+      "<p>Fin 1</p>", {
+        enter: function(character, system, from) {
+		  system.setCharacterText(
+                    "<p>Progreso del juego 100%</p>"
+			);
+          
+        },
+
+        heading: "Día del Examen"
+        
+
+      }
+    ),
+	finsuspenso: new undum.SimpleSituation(
+      "<p>Fin 2</p>", {
+        enter: function(character, system, from) {
+		  system.setCharacterText(
+                    "<p>Progreso del juego 99%</p>"
+			);
+          
+        },
+
+        heading: "Día del Examen"
+        
+
+      }
     ),
 
 };
