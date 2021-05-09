@@ -217,7 +217,7 @@ undum.game.situations = {
     ),
 
     biblioteca: new undum.SimpleSituation(
-    "<p>Ya que hoy nuestro estudiante decidió\
+    "<p><img src='media/img/bibliote.png' Ya que hoy nuestro estudiante decidió\
         ir a la biblioteca con un amigo. \
          </p><p><a href='dudasamigo'>Preguntar dudas que le surgen a su compañero.</a></p> \
          </p><p><a href='bibliomusica'>Ponerse musica para estudiar.</a></p> \
@@ -238,8 +238,7 @@ undum.game.situations = {
   ),
 
    dudasamigo: new undum.SimpleSituation(
-   "<p>Le preguntamos a nuestro amigo por una duda que nos ha surgido mientras estudiabamos, y nos contesta\n\
-    que lo que deberia ir es a <a href='particulares'>clases particulares.</a></p>", {
+   "<p> Nos surge una duda mientras estudiamos,</p><p><a href='dialogos'>Le preguntamos.</a></p> </p>", {
      enter: function(character, system, from) {
 		 system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
@@ -255,6 +254,25 @@ undum.game.situations = {
 
    }
  ),
+
+ dialogos: new undum.SimpleSituation(
+ "<p> ¿Esto que sale en este ejercicio estaría bien? ¿El modelo conceptual sería este? - Preguntamos agobiados \
+  <p>Pues la verdad es que el ejercicio lo tienes bastante mal... y el modelo también. Te recomiendo apuntarte a <a href='particulares'>Clases Particulares</a> -dice mientras continua estudiando </p></p>", {
+   enter: function(character, system, from) {
+   system.setCharacterText(
+                  "<p>Progreso del juego 0%</p>"
+      );
+     system.animateQuality("interes", character.qualities.interes+30);
+     system.animateQuality("apuntes", character.qualities.apuntes+1);
+     system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+   },
+
+   heading: "Resolviendo dudas en dialogo",
+   diplayOrder: 3,
+   tags: ["dialogos"],
+
+ }
+),
 
  bibliomusica: new undum.SimpleSituation(
  "<p>Nos ponemos musica mientras estudiamos para evitar el murmullo de la <a href='biblioteca'>biblioteca</a></p>", {
