@@ -70,8 +70,10 @@ undum.game.situations = {
     ),
     ir_tutoria: new undum.SimpleSituation(
       "<p><img src='media/img/duda.png' class='float_right' style=\"max-width: 40%;\"> Nuestro estudiante se decidió\
-          finalmente por ir a la tutoría. Al terminar la tutoría todo le quedo más claro\
-           y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
+          finalmente por ir a la tutoría. \
+          <p> Buenos dias Profesor, tengo una duda con esta práctica. No entiendo porque no me compila. -dice sentandose en el despacho del profesor</p> \
+          <p> Buenos dias Alumno, por lo que puedo ver, no estás inicializando bien esta variable y te da error aqui. Compruebalo y me dices. -dice señalando el error </p> \
+          <p>Al terminar la tutoría todo le quedo más claro y pudo completar sin ninguna dificultad sus prácticas. <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
         enter: function(character, system, from) {
 			system.setCharacterText(
                     "<p>Progreso del juego 0%</p>"
@@ -89,7 +91,7 @@ undum.game.situations = {
 
     no_ir_tutoria: new undum.SimpleSituation(
       "<p>Nuestro estudiante se decicido\
-          por no ir a la tutoría e intetar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
+          por no ir a la tutoría e intentar sacar la practica por si solo. Tras mucho tiempo y esfuerzo consigio\
           sacar la practica adelante\
            <a href='estudiar'>¿Que hará ahora nuestro estudiante?</a></p>", {
              enter: function(character, system, from) {
