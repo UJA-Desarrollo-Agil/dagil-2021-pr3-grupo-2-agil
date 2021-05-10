@@ -79,7 +79,7 @@ organizar la manera de narrar la historia, mejorar el final, pulir detalles de d
 ![final_product_backlog3](https://user-images.githubusercontent.com/78825172/115298722-1b2f1400-a15e-11eb-8017-afbace9f4acd.png)
 
 
-## Sprint 1
+## Sprint 2
 
 ### Captura de pantalla de las HU Y explicación
 
@@ -90,3 +90,8 @@ organizar la manera de narrar la historia, mejorar el final, pulir detalles de d
 ### Conclusiones obtenidas en la Sprint Review
 
 ### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
+
+### Captura de pantalla de las HU del Product Backlog una vez acabado el sprint.
+
+
+
