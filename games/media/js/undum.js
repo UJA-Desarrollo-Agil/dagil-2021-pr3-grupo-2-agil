@@ -25,7 +25,7 @@
                 f = v[name];
             } else {
                 f = p[name];
-                if (f == this[name]) {
+                if (f === this[name]) {
                     f = v[name];
                 }
             }
@@ -702,7 +702,7 @@
             var situationId = listOfIds[i];
             var situation = game.situations[situationId];
             assert(situation, "unknown_situation".l({id:situationId}));
-            if (situation == currentSituation)
+            if (situation === currentSituation)
             {
                 continue;
             }
@@ -785,7 +785,7 @@
         var i;
 
         // First check if we have a single string for the id or tag.
-        if ($.type(listOfOrOneIdsOrTags) == 'string') {
+        if ($.type(listOfOrOneIdsOrTags) === 'string') {
             listOfOrOneIdsOrTags = [listOfOrOneIdsOrTags];
         }
 
@@ -793,7 +793,7 @@
         var allIds = {};
         for (i = 0; i < listOfOrOneIdsOrTags.length; ++i) {
             var tagOrId = listOfOrOneIdsOrTags[i];
-            if (tagOrId.substr(0, 1) == '#') {
+            if (tagOrId.substr(0, 1) === '#') {
                 var ids = getSituationIdsWithTag(tagOrId.substr(1));
                 for (var j = 0; j < ids.length; ++j) {
                     allIds[ids[j]] = true;
@@ -830,7 +830,7 @@
         // In descending priority order.
         for (i = 0; i < viewableSituationData.length; ++i) {
             datum = viewableSituationData[i];
-            if (datum.priority != lastPriority) {
+            if (datum.priority !== lastPriority) {
                 if (lastPriority !== undefined) {
                     // We've dropped a priority group, see if we have enough
                     // situations so far, and stop if we do.
@@ -929,7 +929,7 @@
             qualityBlock = addQualityBlock(quality).hide().fadeIn(500);
         } else {
             // Do nothing if there's nothing to do.
-            if (oldValue == newValue) return;
+            if (oldValue === newValue) return;
 
             // Change the value.
             if (newDisplay === null) {
@@ -1125,7 +1125,7 @@
      * change should be stored in the character.
      */
     var game = {
-
+        
         // Situations
 
         /* An object mapping from the unique id of each situation, to
@@ -1173,7 +1173,6 @@
          * function(character, system, oldSituationId, newSituationId);
          */
         enter: null,
-
         /* Hook for when the situation has already been carried out
          * and printed. The signature is:
          *
@@ -2277,9 +2276,9 @@
         link_no_action: "A link with a situation of '.', must have an action.",
         unknown_situation: "You can't move to an unknown situation: {id}.",
         existing_situation: "You can't override situation {id} in HTML.",
-        erase_message: "This will permanently delete this character and immediately return you to the start of the game. Are you sure?",
+        erase_message: "Se borrara su personaje y volvera al inicio del juego. Esta seguro?",
         no_current_situation: "I can't display, because we don't have a current situation.",
-        no_local_storage: "No local storage available.",
+        no_local_storage: "No hay datos guardados.",
         random_seed_error: "You must provide a valid random seed.",
         random_error: "Initialize the Random with a non-empty seed before use.",
         dice_string_error: "Couldn't interpret your dice string: '{string}'."
