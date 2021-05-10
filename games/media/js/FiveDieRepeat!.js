@@ -141,7 +141,7 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 90%</p>"
         );
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 30);
+        system.animateQuality("conocimiento", character.qualities.conocimiento - 50);
 
         if (character.qualities.conocimiento <= 0) {
           system.doLink('fin1');
@@ -206,7 +206,7 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 75%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 10);
+        system.animateQuality("interes", character.qualities.interes - 10);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
@@ -757,7 +757,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
           "<p>Progreso del juego 25%</p>"
         );
 
-        system.setQuality("conocimiento", character.qualities.conocimiento - 20);
+        system.setQuality("conocimiento", character.qualities.conocimiento - 30);
         system.setQuality("interes", character.qualities.interes - 5);
 
 
