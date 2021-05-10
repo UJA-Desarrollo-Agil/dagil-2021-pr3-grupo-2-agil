@@ -116,7 +116,7 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 
 ### Conclusiones obtenidas en la Sprint Retrospective
 
-- Cuales son las cosas a mejorar: Equilibrar las puntuaciones entre situaciones para hacer la historia más completa, crear más de dos finales, implementar un mejor host donde alojar la versión web de nuestro proyecto.
+- Cuales son las cosas a mejorar: Equilibrar las puntuaciones entre situaciones para hacer la historia más completa, crear más de dos finales, implementar un mejor host donde alojar la versión web de nuestro proyecto, mejorar el uso de Github respecto a los merge entre ramas.
 - Que funciono bien: ideas propuestas durante el desarrollo, comunicación entre los integrantes del grupo.
 - Problemas que haya tenido para progresar: Los principales problemas fueron el desconocimiento al intentar agregar nuevas funciones a la historias (distintos finales, despliegue web, etc).
 - Recomendaciones para futuros sprint: Hacer la historia menos lineal, generar más ramificaciones, intentar crear un host propio para alojar la historia.
