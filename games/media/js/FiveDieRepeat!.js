@@ -41,7 +41,7 @@ undum.game.situations = {
 
 
     ),
-	
+
 
 	iniciohistoria: new undum.SimpleSituation(
       "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
@@ -58,7 +58,7 @@ undum.game.situations = {
                     system.setCharacterText(
                         "<p>Debes conseguir los máximos puntos de conocimiento así como los apuntes para aprobar el examen.</p>"
                     );
-                   
+
                 }
             },
 
@@ -89,6 +89,19 @@ undum.game.situations = {
 			);
           system.animateQuality("interes", character.qualities.interes+10);
           system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+
+                  if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+                    //system.doLink('fin');
+                    system.setCharacterText(
+                      "<p>Estoy...¿Suspenso?</p>"
+                    );
+                  }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+                    system.setCharacterText(
+                      //system.doLink('fin');
+                      "<p>Al final el esfuerzo tiene su recompensa</p>"
+                    );
+                  }
+
         },
 
         heading: "Ir a tutoría",
@@ -108,6 +121,18 @@ undum.game.situations = {
                     "<p>Progreso del juego 90%</p>"
 				);
                system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+
+               if (character.qualities.conocimiento <= 0) {
+                 //system.doLink('fin');
+                 system.setCharacterText(
+                   "<p>Estoy...¿Suspenso?</p>"
+                 );
+               }else if (character.qualities.conocimiento <= 100) {
+                 system.setCharacterText(
+                   //system.doLink('fin');
+                   "<p>Al final el esfuerzo tiene su recompensa</p>"
+                 );
+               }
              },
 
         heading: "No ir a tutoría",
@@ -129,6 +154,18 @@ undum.game.situations = {
 			);
           system.animateQuality("conocimiento", character.qualities.conocimiento-10);
           system.animateQuality("interes", character.qualities.interes-10);
+
+          if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+            //system.doLink('fin');
+            system.setCharacterText(
+              "<p>Estoy...¿Suspenso?</p>"
+            );
+          }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+            system.setCharacterText(
+              //system.doLink('fin');
+              "<p>Al final el esfuerzo tiene su recompensa</p>"
+            );
+          }
         },
 
         heading: "Continuar estudiando",
@@ -149,6 +186,18 @@ undum.game.situations = {
                     "<p>Progreso del juego 75%</p>"
 				);
                system.animateQuality("interes", character.qualities.interes+10);
+
+               if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+                 //system.doLink('fin');
+                 system.setCharacterText(
+                   "<p>Estoy...¿Suspenso?</p>"
+                 );
+               }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+                 system.setCharacterText(
+                   //system.doLink('fin');
+                   "<p>Al final el esfuerzo tiene su recompensa</p>"
+                 );
+               }
              },
 
         heading: "Descansar",
@@ -191,6 +240,17 @@ undum.game.situations = {
             var aleatorio = Math.floor(Math.random() * 11);
             if (aleatorio > 5){
                 system.animateQuality("interes", character.qualities.interes-20);
+                if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+                  //system.doLink('fin');
+                  system.setCharacterText(
+                    "<p>Estoy...¿Suspenso?</p>"
+                  );
+                }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+                  system.setCharacterText(
+                    //system.doLink('fin');
+                    "<p>Al final el esfuerzo tiene su recompensa</p>"
+                  );
+                }
                 system.setCharacterText("<p>El profesor me puso un 0 por copia</p>");
             }else{
                 system.setCharacterText("<p>El profesor no se dio cuenta de que le deje las prácticas</p>");
@@ -239,6 +299,18 @@ undum.game.situations = {
 				);
         system.animateQuality("interes", character.qualities.interes+10);
         system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+
+        if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+          //system.doLink('fin');
+          system.setCharacterText(
+            "<p>Estoy...¿Suspenso?</p>"
+          );
+        }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+          system.setCharacterText(
+            //system.doLink('fin');
+            "<p>Al final el esfuerzo tiene su recompensa</p>"
+          );
+        }
       },
 
       heading: "15 de Febrero: Biblioteca con un amigo",
@@ -257,6 +329,18 @@ undum.game.situations = {
        system.animateQuality("interes", character.qualities.interes+30);
        system.animateQuality("apuntes", character.qualities.apuntes+1);
        system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+
+       if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+         //system.doLink('fin');
+         system.setCharacterText(
+           "<p>Estoy...¿Suspenso?</p>"
+         );
+       }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+         system.setCharacterText(
+           //system.doLink('fin');
+           "<p>Al final el esfuerzo tiene su recompensa</p>"
+         );
+       }
      },
 
      heading: "Un día en la biblioteca",
@@ -276,6 +360,17 @@ undum.game.situations = {
      system.animateQuality("interes", character.qualities.interes+30);
      system.animateQuality("apuntes", character.qualities.apuntes+1);
      system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+     if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+       //system.doLink('fin');
+       system.setCharacterText(
+         "<p>Estoy...¿Suspenso?</p>"
+       );
+     }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+       system.setCharacterText(
+         //system.doLink('fin');
+         "<p>Al final el esfuerzo tiene su recompensa</p>"
+       );
+     }
    },
 
    heading: "Resolviendo dudas en dialogo",
@@ -293,6 +388,18 @@ undum.game.situations = {
        );
      system.animateQuality("interes", character.qualities.interes-20);
      system.animateQuality("conocimiento", character.qualities.conocimiento+10);
+
+     if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+       //system.doLink('fin');
+       system.setCharacterText(
+         "<p>Estoy...¿Suspenso?</p>"
+       );
+     }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+       system.setCharacterText(
+         //system.doLink('fin');
+         "<p>Al final el esfuerzo tiene su recompensa</p>"
+       );
+     }
    },
 
    heading: "Duda",
@@ -311,6 +418,18 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
 				);
    system.animateQuality("interes", character.qualities.interes-80);
    system.animateQuality("conocimiento", character.qualities.conocimiento-20);
+
+   if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+     //system.doLink('fin');
+     system.setCharacterText(
+       "<p>Estoy...¿Suspenso?</p>"
+     );
+   }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+     system.setCharacterText(
+       //system.doLink('fin');
+       "<p>Al final el esfuerzo tiene su recompensa</p>"
+     );
+   }
  },
  heading: "Perder el tiempo en el PC",
  diplayOrder: 3,
@@ -344,6 +463,18 @@ irparticulares: new undum.SimpleSituation(
 				);
    system.animateQuality("interes", character.qualities.interes+80);
    system.animateQuality("conocimiento", character.qualities.conocimiento+50);
+
+   if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+     //system.doLink('fin');
+     system.setCharacterText(
+       "<p>Estoy...¿Suspenso?</p>"
+     );
+   }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+     system.setCharacterText(
+       //system.doLink('fin');
+       "<p>Al final el esfuerzo tiene su recompensa</p>"
+     );
+   }
  },
  heading: "Asiste a clases particulares",
  diplayOrder: 3,
@@ -360,6 +491,18 @@ noirparticulares: new undum.SimpleSituation(
 				);
    system.animateQuality("interes", character.qualities.interes-80);
    system.animateQuality("conocimiento", character.qualities.conocimiento-100);
+
+   if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+     //system.doLink('fin');
+     system.setCharacterText(
+       "<p>Estoy...¿Suspenso?</p>"
+     );
+   }else if (character.qualities.conocimiento <= 100 || character.qualities.interes <= 100 ) {
+     system.setCharacterText(
+       //system.doLink('fin');
+       "<p>Al final el esfuerzo tiene su recompensa</p>"
+     );
+   }
  },
  heading: "No asiste a clases particulares",
  diplayOrder: 3,
@@ -627,18 +770,18 @@ noirparticulares: new undum.SimpleSituation(
         }
 
     ),
-	
+
 	finaprobado: new undum.SimpleSituation(
       "<p>Fin 1</p>", {
         enter: function(character, system, from) {
 		  system.setCharacterText(
                     "<p>Progreso del juego 100%</p>"
 			);
-          
+
         },
 
         heading: "Día del Examen"
-        
+
 
       }
     ),
@@ -648,11 +791,11 @@ noirparticulares: new undum.SimpleSituation(
 		  system.setCharacterText(
                     "<p>Progreso del juego 99%</p>"
 			);
-          
+
         },
 
         heading: "Día del Examen"
-        
+
 
       }
     ),
