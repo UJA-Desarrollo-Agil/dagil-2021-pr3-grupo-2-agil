@@ -116,7 +116,13 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 
 ### Conclusiones obtenidas en la Sprint Retrospective
 
+- Cuales son las cosas a mejorar: Equilibrar las puntuaciones entre situaciones para hacer la historia más completa, crear más de dos finales, implementar un mejor host donde alojar la versión web de nuestro proyecto.
+- Que funciono bien: ideas propuestas durante el desarrollo, comunicación entre los integrantes del grupo.
+- Problemas que haya tenido para progresar: Los principales problemas fueron el desconocimiento al intentar agregar nuevas funciones a la historias (distintos finales, despliegue web, etc).
+- Recomendaciones para futuros sprint: Hacer la historia menos lineal, generar más ramificaciones, intentar crear un host propio para alojar la historia.
+
 ### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
+![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/Ultima2.png?raw=true)
 
 ### Captura de pantalla de las HU del Product Backlog una vez acabado el sprint.
 
