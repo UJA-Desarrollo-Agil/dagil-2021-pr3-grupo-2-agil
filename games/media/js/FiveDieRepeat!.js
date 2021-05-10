@@ -156,7 +156,7 @@ undum.game.situations = {
 
 
   seguir_estudiando: new undum.SimpleSituation(
-    "<p><img src='media/img/descansar.gif' class='float_right' style=\"max-width: 70%;\">Después de un día agotador\
+    "<p><img src='media/img/descansar.gif' class='float_right' style=\"max-width: 40%;\">Después de un día agotador\
         nuestro estudiante quiso seguir estudiando, al llevar todo el día estudiando y exigirse demasiado no solo no aprendió\
         nada sino que empezó a confundir términos, al no descansar adecuadamente su rendimiento académico bajo\
         a la mañana siguiente se despertó con varios <a href='debo_dejar_practica'>mensajes de un compañero</a></p>", {
@@ -253,7 +253,7 @@ undum.game.situations = {
         );
         var aleatorio = Math.floor(Math.random() * 11);
         if (aleatorio > 5) {
-          system.animateQuality("interes", character.qualities.interes - 20);
+          system.animateQuality("interes", character.qualities.interes - 50);
           if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
             system.doLink('fin1');
             system.setCharacterText(
@@ -342,9 +342,9 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 7%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 30);
+        system.animateQuality("interes", character.qualities.interes + 20);
         system.animateQuality("apuntes", character.qualities.apuntes + 1);
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 50);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 20);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
@@ -374,9 +374,9 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 9%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 30);
+        system.animateQuality("interes", character.qualities.interes + 10);
         system.animateQuality("apuntes", character.qualities.apuntes + 1);
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 50);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 10);
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
           system.setCharacterText(
@@ -404,7 +404,7 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 1%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes - 20);
+        system.animateQuality("interes", character.qualities.interes - 10);
         system.animateQuality("conocimiento", character.qualities.conocimiento + 10);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
@@ -435,7 +435,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
         system.setCharacterText(
           "<p>Progreso del juego 10%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes - 80);
+        system.animateQuality("interes", character.qualities.interes - 30);
         system.animateQuality("conocimiento", character.qualities.conocimiento - 20);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
@@ -481,8 +481,8 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
         system.setCharacterText(
           "<p>Progreso del juego 17%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 80);
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 50);
+        system.animateQuality("interes", character.qualities.interes + 20);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 20);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
@@ -510,8 +510,8 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
         system.setCharacterText(
           "<p>Progreso del juego 17%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes - 80);
-        system.animateQuality("conocimiento", character.qualities.conocimiento - 100);
+        system.animateQuality("interes", character.qualities.interes - 0);
+        system.animateQuality("conocimiento", character.qualities.conocimiento - 0);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
@@ -587,7 +587,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
     "<p><img src='media/img/bus.png' class='float_right'>Has decidido ir en autobús, no te apetecía andar media hora hacia la Universidad. Cojes la mochila y te aseguras de no olvidarte las llaves antes de salir de casa.</p>\
 		<p>Te dirijes hacia la parada de autobús mas cercana. Aunque vas escuchando música la espera se te hace infinita. Es bus ha llegado veinte minutos tarde. </p>\
 		<p>Por fin estas dentro. Te sientas en el último asiento, cerca del motor. Tras dos minutos de trayecto se oye como un crujido en el motor y se detiene súbitamente.</p>\
-		<p>El conductor dice que no puede arreglaro, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase. Prácticamente como si no hubieras ido.\
+		<p>El conductor dice que no puede arreglarlo, te has quedao plantado en mitad de camino. El próximo bus de la línea llega en una hora. Solo te queda bajar andando. </p>\<p>Por fin llegas ha clase pero solo te da tiempo a dar 20 minutos de clase. Prácticamente como si no hubieras ido.\
            <p><a href='faltar'>Continuar historia.</a></p>",
 
     {
@@ -600,7 +600,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
           "<p>No has podido tomar apuntes del tema 2.</p>"
         );
         system.setQuality("conocimiento", character.qualities.conocimiento - 10);
-        system.setQuality("pasta", character.qualitiespasta - 1);
+        system.setQuality("pasta", character.qualities.pasta - 1);
 
 
       }
@@ -676,8 +676,8 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
         system.setCharacterText(
           "<p>No te has perdido gran cosa.</p>"
         );
-        system.setQuality("conocimiento", character.qualities.conocimiento - 1);
-        system.setQuality("interes", character.qualities.interes - 1);
+        system.setQuality("conocimiento", character.qualities.conocimiento - 10);
+        system.setQuality("interes", character.qualities.interes - 10);
 
 
       },
@@ -686,8 +686,8 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
           system.setCharacterText(
             "<p>Le has pedido apuntes del Tema 9 a Manolo.</p>"
           );
-          system.setQuality("conocimiento", character.qualities.conocimiento + 2);
-          system.setQuality("interes", character.qualities.interes + 3);
+          system.setQuality("conocimiento", character.qualities.conocimiento + 20);
+          system.setQuality("interes", character.qualities.interes + 30);
           system.setQuality("tema9", character.qualities.tema9 + 1);
 
         }
@@ -783,7 +783,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
   ),
 
   finaprobado: new undum.SimpleSituation(
-    "<p>Fin 1</p>", {
+    "<p>HAS APROBADO. POR FIN. QUIEN LA SIGUE LA CONSIGUE.</p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 100%</p>"
@@ -797,7 +797,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
     }
   ),
   finsuspenso: new undum.SimpleSituation(
-    "<p>Fin 2</p>", {
+    "<p>Has suspendido... pero no pasa nada la vida suele dar más oportunidades.</p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 99%</p>"
@@ -894,7 +894,7 @@ undum.game.qualityGroups = {
 /* This function gets run before the game begins. It is normally used
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
-  character.qualities.interes = 50;
+  character.qualities.interes = 10;
   character.qualities.conocimiento = 0;
   character.qualities.pasta = 200;
   character.qualities.suspenso = 1;
