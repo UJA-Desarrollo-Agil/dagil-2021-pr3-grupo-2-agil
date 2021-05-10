@@ -77,3 +77,33 @@ organizar la manera de narrar la historia, mejorar el final, pulir detalles de d
 ![final_product_backlog2](https://user-images.githubusercontent.com/78825172/115298693-136f6f80-a15e-11eb-992e-bf87f1ebbd18.png)
 
 ![final_product_backlog3](https://user-images.githubusercontent.com/78825172/115298722-1b2f1400-a15e-11eb-8017-afbace9f4acd.png)
+
+
+## Sprint 2
+
+### Captura de pantalla de las HU Y explicación
+
+![Trello3](https://user-images.githubusercontent.com/78795117/117648029-027ab280-b18e-11eb-8044-00ed22af143d.JPG)
+![Trello4](https://user-images.githubusercontent.com/78795117/117648038-03abdf80-b18e-11eb-9790-8e68025c1db6.JPG)
+
+Explicación:
+Seleccionamos estas 7 HU, de las cuales ninguna es innegociable. Seleccionamos en función del valor que le damos a cada una y en función de lo que vemos más sencillo a la hora de implementar. Hay HU que vemos que no son sencillas y que nos quitaran mucho tiempo del Sprint y por lo tanto las dejamos en el Product Backlog. 
+
+
+
+### Captura de pantalla de dichas HU descompuestas en tareas al principio del Sprint
+
+![Trello1](https://user-images.githubusercontent.com/78795117/117648568-ab291200-b18e-11eb-9358-65b7c69477a6.JPG)
+![Trello2](https://user-images.githubusercontent.com/78795117/117648577-acf2d580-b18e-11eb-89f0-cc884485be59.JPG)
+
+
+### Capturas de pantalla del Product Backlog y del Sprint Backlog tras las modificaciones  realizadas en el Product Backlog Refinement
+
+### Conclusiones obtenidas en la Sprint Review
+
+### Captura de pantalla de las tareas del Sprint Planning al final del sprint (para ver cuántas se han acabado, cuántas se han quedado en fase de desarrollo o prueba, cuántas NO se han terminado, qué miembros se han asignado las tareas…)
+
+### Captura de pantalla de las HU del Product Backlog una vez acabado el sprint.
+
+
+
