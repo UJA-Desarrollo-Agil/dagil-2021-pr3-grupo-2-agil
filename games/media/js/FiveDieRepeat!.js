@@ -56,7 +56,7 @@ undum.game.situations = {
       actions: {
         "ayuda": function(character, system, action) {
           system.setCharacterText(
-            "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar.</p>"
+            "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar. Si tienes menos de 0 suspenderás.</p>"
           );
 
         }
@@ -71,6 +71,9 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 0%</p>"
         );
+		system.animateQuality("interes", character.qualities.interes + 20);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 20);
+		system.animateQuality("suspenso", character.qualities.suspenso - 1);
 
       },
       heading: "Otra vez 1 de Febrero: Fin de las vacaciones",
@@ -108,8 +111,8 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 90%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 30);
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 30);
+        system.animateQuality("interes", character.qualities.interes + 60);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 60);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0 || character.qualities.conocimiento < 100 || character.qualities.interes < 100) {
           system.doLink('fin1');
