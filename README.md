@@ -129,4 +129,11 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 
 ![productBacklogultimo](https://user-images.githubusercontent.com/78825172/117726514-f8d16900-b1e6-11eb-96fe-f961e9eaf780.png)
 
+### SprintBacklog
+
+![sprint Backlog](https://user-images.githubusercontent.com/78825172/117728506-d8ef7480-b1e9-11eb-887e-930cade06d9e.png)
+
+### Reviewing
+
+![Reviewing](https://user-images.githubusercontent.com/78825172/117728654-ff151480-b1e9-11eb-85c9-e285547a9b75.png)
 
