@@ -56,7 +56,7 @@ undum.game.situations = {
       actions: {
         "ayuda": function(character, system, action) {
           system.setCharacterText(
-            "<p>Debes conseguir los máximos puntos de conocimiento así como los apuntes para aprobar el examen.</p>"
+            "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar.</p>"
           );
 
         }
@@ -65,27 +65,35 @@ undum.game.situations = {
     }
   ),
   iniciohistoria2: new undum.SimpleSituation(
-    "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de... ¡Un momento, esto ya lo has vivido!  \
-	  Acabas de viajar al pasado tras suspender el examen. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.  No debes desaprovechar esta oportunidad</p><p><a href='biblioteca'> Volver a comenzar el cuatrimestre</a></p>", {
+    "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras... ¡Un momento, esto ya lo has vivido!  \
+	  Acabas de viajar al pasado tras suspender el examen. </p><p>Debes de todo lo posible por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.  No debes desaprovechar esta oportunidad</p><p><a href='./ayuda'> ¿Necesitas ayuda?</a><p><a href='biblioteca'> Volver a comenzar el cuatrimestre</a></p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 0%</p>"
         );
 
       },
-      heading: "Fin de las vacaciones",
+      heading: "Otra vez 1 de Febrero: Fin de las vacaciones",
+	  actions: {
+        "ayuda": function(character, system, action) {
+          system.setCharacterText(
+            "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar.</p>"
+          );
+
+        }
+      },
 
     }
   ),
   fin1: new undum.SimpleSituation(
-    "<p>Suspendiste el curso, ¿tanto trabajo para nada¿</p>", {
-      heading: "¿Suspendí?",
+    "<p><a href='finsuspenso'> Continuar.</a></p>", {
+     
     }
   ),
   fin2: new undum.SimpleSituation(
-    "<p>Después del duro trabjo todo salio como esperaba</p>", {
+    "<p><a href='finaprobado'> Continuar.</a></p>", {
 
-      heading: "¿Aprobé?",
+      
 
     }
   ),
@@ -100,10 +108,10 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 90%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 10);
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 10);
+        system.animateQuality("interes", character.qualities.interes + 30);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 30);
 
-        if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
+        if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0 || character.qualities.conocimiento < 100 || character.qualities.interes < 100) {
           system.doLink('fin1');
           system.setCharacterText(
             "<p>Estoy...¿Suspenso?</p>"
@@ -133,7 +141,7 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 90%</p>"
         );
-        system.animateQuality("conocimiento", character.qualities.conocimiento + 10);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 30);
 
         if (character.qualities.conocimiento <= 0) {
           system.doLink('fin1');
@@ -164,8 +172,8 @@ undum.game.situations = {
         system.setCharacterText(
           "<p>Progreso del juego 75%</p>"
         );
-        system.animateQuality("conocimiento", character.qualities.conocimiento - 10);
-        system.animateQuality("interes", character.qualities.interes - 10);
+        system.animateQuality("conocimiento", character.qualities.conocimiento + 50);
+        system.animateQuality("interes", character.qualities.interes + 50);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
           system.doLink('fin1');
@@ -355,7 +363,7 @@ undum.game.situations = {
           system.doLink('fin2');
           system.setCharacterText(
 
-            "<p>Al final el esfuerzo tiene su recompensa</p>"
+            "<p>¿Estoy aprobado?</p>"
           );
         }
       },
@@ -481,7 +489,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
         system.setCharacterText(
           "<p>Progreso del juego 17%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes + 20);
+        system.animateQuality("interes", character.qualities.interes + 30);
         system.animateQuality("conocimiento", character.qualities.conocimiento + 20);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
@@ -505,12 +513,12 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
   ),
 
   noirparticulares: new undum.SimpleSituation(
-    "<p>Nuestro estudiante se ha levantado vaguete y no va</p>", {
+    "<p>Nuestro estudiante se ha levantado vaguete y no va<p><a href='voluntario'>Continuar.</a></p></p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 17%</p>"
         );
-        system.animateQuality("interes", character.qualities.interes - 0);
+        system.animateQuality("interes", character.qualities.interes - 20);
         system.animateQuality("conocimiento", character.qualities.conocimiento - 0);
 
         if (character.qualities.conocimiento <= 0 || character.qualities.interes <= 0) {
@@ -749,7 +757,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
           "<p>Progreso del juego 25%</p>"
         );
 
-        system.setQuality("conocimiento", character.qualities.conocimiento - 5);
+        system.setQuality("conocimiento", character.qualities.conocimiento - 20);
         system.setQuality("interes", character.qualities.interes - 5);
 
 
@@ -771,7 +779,7 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
           "<p>Progreso del juego 25%</p>"
         );
 
-        system.setQuality("conocimiento", character.qualities.conocimiento + 5);
+        system.setQuality("conocimiento", character.qualities.conocimiento + 40);
         system.setQuality("interes", character.qualities.interes + 1);
 
 
@@ -783,11 +791,12 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
   ),
 
   finaprobado: new undum.SimpleSituation(
-    "<p>HAS APROBADO. POR FIN. QUIEN LA SIGUE LA CONSIGUE.</p>", {
+    "<p><img src='media/img/aprobado.png' class='float_right'>HAS APROBADO. POR FIN. QUIEN LA SIGUE LA CONSIGUE.</p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 100%</p>"
         );
+		system.setQuality("aprobado", character.qualities.aprobado + 1);
 
       },
 
@@ -797,15 +806,18 @@ estoy viendo que se puede hacer una entrega de un trabajo <a href='voluntario'>v
     }
   ),
   finsuspenso: new undum.SimpleSituation(
-    "<p>Has suspendido... pero no pasa nada la vida suele dar más oportunidades.</p>", {
+    "<p><img src='media/img/suspendo.png' class='float_right'>Has suspendido... pero no pasa nada la vida suele dar <a href='iniciohistoria2'>más oportunidades.</a></p>", {
       enter: function(character, system, from) {
         system.setCharacterText(
           "<p>Progreso del juego 99%</p>"
         );
+		system.setQuality("suspenso", character.qualities.suspenso + 1);
+		
 
       },
 
-      heading: "Día del Examen"
+      heading: "Día del Examen",
+	  
 
 
     }
@@ -897,7 +909,7 @@ undum.game.init = function(character, system) {
   character.qualities.interes = 10;
   character.qualities.conocimiento = 0;
   character.qualities.pasta = 200;
-  character.qualities.suspenso = 1;
+  character.qualities.suspenso = 0;
   character.qualities.aprobado = 0;
   character.qualities.tema2 = 0;
   character.qualities.tema8 = 0;
