@@ -120,5 +120,6 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 
 ### Captura de pantalla de las HU del Product Backlog una vez acabado el sprint.
 
+![productBacklogultimo](https://user-images.githubusercontent.com/78825172/117726514-f8d16900-b1e6-11eb-96fe-f961e9eaf780.png)
 
 
