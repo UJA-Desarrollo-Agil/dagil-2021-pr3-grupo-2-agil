@@ -136,4 +136,9 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 ### Reviewing
 
 ![Reviewing](https://user-images.githubusercontent.com/78825172/117728654-ff151480-b1e9-11eb-85c9-e285547a9b75.png)
+# Métricas
+## Tabla General
+![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/tablageneral.png?raw=true)
+## Burndow General
+![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/burndown_general.png?raw=true)
 
