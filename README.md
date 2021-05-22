@@ -140,5 +140,5 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 ## Tabla General
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/tablageneral.png?raw=true)
 ## Burndow General
-![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/burndown_general.png?raw=true)
+![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/burndow_general.png?raw=true)
 
