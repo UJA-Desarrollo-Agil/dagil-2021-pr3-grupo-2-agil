@@ -179,4 +179,23 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 
 ![BurnUp](https://user-images.githubusercontent.com/78825172/119269483-31663f00-bbf8-11eb-8a0f-8f02bb117657.png)
 
+## Burndown Sprint 2.
 
+![burndown](https://user-images.githubusercontent.com/78795117/119273710-74caa880-bc0c-11eb-8868-fd587c30af34.JPG)
+
+## Burnup Sprint 2.
+
+![burnup](https://user-images.githubusercontent.com/78795117/119273700-65e3f600-bc0c-11eb-9049-16e086852627.JPG)
+
+
+## Conclusiones 
+
+#Proyecto
+
+#Sprints
+
+Sprint 1.
+
+Sprint 2.
+
+Sprint 3. 
