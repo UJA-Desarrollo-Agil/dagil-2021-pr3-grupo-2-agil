@@ -169,7 +169,7 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 
 ## Sprint 1 junto con sus graficos Burndown y Burnup.
 
-![sprint1YdatosGraficas](https://user-images.githubusercontent.com/78825172/119269361-9ec5a000-bbf7-11eb-9bdf-357dc8ae6cd1.png)
+![sprint1YdatosGraficas](https://user-images.githubusercontent.com/78825172/119269985-be11fc80-bbfa-11eb-88d5-79eebc709d4e.png)
 
 ## Burndown Sprint 1.
 
