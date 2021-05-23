@@ -190,9 +190,9 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 
 ## Conclusiones 
 
-#Proyecto
+# Proyecto
 
-#Sprints
+# Sprints
 
 Sprint 1.
 
