@@ -179,6 +179,12 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 
 ![BurnUp](https://user-images.githubusercontent.com/78825172/119269483-31663f00-bbf8-11eb-8a0f-8f02bb117657.png)
 
+
+## Tabla Completa Sprint 2.
+
+![image](https://user-images.githubusercontent.com/78795117/119273966-ba3ba580-bc0d-11eb-99c1-047ee4ac4bd7.png)
+
+
 ## Burndown Sprint 2.
 
 ![burndown](https://user-images.githubusercontent.com/78795117/119273710-74caa880-bc0c-11eb-8868-fd587c30af34.JPG)
@@ -190,12 +196,21 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 
 ## Conclusiones 
 
-# Proyecto
+### Proyecto
 
-# Sprints
+La conclusión a la que llegamos en el proyecto en conjunto, es que hemos abordado las tareas con PH y valor, dejando sin terminar las que hemos visto que son menos necesarias.
+No hemos sido muy constantes y las gráficas lo demuestran.
 
-Sprint 1.
+### Sprints
 
-Sprint 2.
+#### Sprint 0.
 
-Sprint 3. 
+En el sprint 0 no nos centramos en la historia, estuvimos creando el product backlog y darle forma, por ello se ve que no hemos completado ningun PH.
+
+#### Sprint 1.
+
+En el sprint 1 conseguimos terminar 59PH, con un valor de 105. Fue un gran sprint aunque tuvimos algunos dias que no avanzamos nada, bastante irregular.
+
+### Sprint 2. 
+
+En sl sprint 2 conseguimos terminar 140PH de los 177PH totales, con un valor de 236. Fue un sprint en el que completamos todo a ultima hora, y en los ultimos dias completamos muchas tareas, irregulares pero cumpliendo casi con los plazos marcados. 
