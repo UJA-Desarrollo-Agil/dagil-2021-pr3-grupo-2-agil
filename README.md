@@ -157,3 +157,16 @@ Enlace a todas las tablas: https://docs.google.com/spreadsheets/d/17RkJYz3DQg6lk
 ## Tabla de velocidades
 ![image](https://user-images.githubusercontent.com/78794703/119264976-661ccb00-bbe5-11eb-8ea2-f9be1ba244b6.png)
 
+## Tablas de datos de los Sprints.
+
+## Sprint 0.
+
+![sprint0](https://user-images.githubusercontent.com/78825172/119269051-0b3f9f80-bbf6-11eb-877d-217b4955227a.png)
+
+## Sprint 2.
+
+![sprint2](https://user-images.githubusercontent.com/78825172/119269113-5659b280-bbf6-11eb-9008-26f130df178e.png)
+
+## Sprint 1 junto con sus graficos Burndown y Burnup.
+
+
