@@ -139,8 +139,14 @@ Durante el desarrollo se han tenido dificultades en las historias de usuario mas
 # Métricas
 ## Tabla General
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/tablageneral.png?raw=true)
-## Burndown General
+## Burndown PH General
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/burndow_general.png?raw=true)
-## Burnup General
+## Burnup PH General
 ![alt text](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr3-grupo-2-agil/blob/master/Capturas_Trello/burnup_general.png?raw=true)
-
+## Burndown VALOR General
+![image](https://user-images.githubusercontent.com/78794703/119264525-df1b2300-bbe3-11eb-9d81-79f799663a22.png)
+![image](https://user-images.githubusercontent.com/78794703/119264533-e6dac780-bbe3-11eb-9fb6-664733d1a3bf.png)
+## Burnup VALOR General
+![image](https://user-images.githubusercontent.com/78794703/119264538-efcb9900-bbe3-11eb-872f-3af1e8b02f50.png)
+![image](https://user-images.githubusercontent.com/78794703/119264544-f78b3d80-bbe3-11eb-95ea-6564e99855de.png)
+## Tabla de velocidades
