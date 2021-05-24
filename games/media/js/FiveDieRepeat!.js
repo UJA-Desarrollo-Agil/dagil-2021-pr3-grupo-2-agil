@@ -74,7 +74,8 @@ undum.game.situations = {
     ),
     cargarjuego: new undum.SimpleSituation(
             "<div><center><p>No tiene ningun juego guardado, empieze uno nuevo!!</p><img src='media/img/error.png' class='float_up'></p></center></div>\
-                        <div><center><H1><p class='transient'>Volvamos al menu...</p></H1></center></div><div><p></center><H1><a href='menu'>MENU DEL JUEGO</a></p></div></center></H1>",
+                        <div><center><H1><p class='transient'>Volvamos al menu...</p></H1></center></div><div><p><center><H1><a href='menu' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+                <span id='span4'></span>MENU DEL JUEGO</a></H1></center></p></div>",
             {
                 enter: function () {
                     undum.game.id = localStorage.getItem("idJuego");
