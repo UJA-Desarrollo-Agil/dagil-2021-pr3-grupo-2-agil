@@ -1,69 +1,98 @@
-/* IDENTIFICADOR UNICO. Principalmente se usa para los juegos largos
- * en los que tienes que guardar la partida, para que se sepa en todo momento
- * quien y por donde va la trama del juego. */
-undum.game.id = "be3d95b6-cbc7-48c6-8e6c-49837ba9113e";
-
+if (localStorage.getItem("idJuego")) {
+    undum.game.id = localStorage.getItem("idJuego");
+} else {
+    undum.game.id = "0";
+}
+function ir() {
+    window.alert('Para una experiencia mas personalizada, este juego registra usuario y contraseña.\n\
+    Si aun no lo has hecho, solo te llevara unos segundos...\n\
+    Si tienes guardada la partida, te llevaré hasta ella!!\n\
+    Vuelves al principio tras pulsar en el boton Borrar!');
+}
+function ir2() {
+    var nombreUsuario = document.getElementById('nombre').value;
+    undum.game.id = document.getElementById('password').value;
+    localStorage.setItem("idJuego", document.getElementById('password').value);
+    localStorage.setItem("anteriorId", document.getElementById('password').value);
+    $("button").attr('disabled', false);
+    window.alert('Bienvenido ' + nombreUsuario + ', su nombre y clave han quedado registrados. Acepte y vaya al Menu del Juego para continuar.');
+    return nombreUsuario;
+}
 /* VERSION DEL JUEGO. Aqui se controlan las partidas guardadas. Evidentemente,
  * una partida guardada, al cambiar la version del juego, si luego la cargas
  * no va a funcionar. */
-undum.game.version = "2.0";
-
+undum.game.version = "4.0";
 /* Variable usada para Web responsive. */
 undum.game.mobileHide = 2000;
-
 /* Variable la opcion de velocidad del fade out. */
 undum.game.fadeSpeed = 1500;
-
 /* Variable que cambia la velocidad de deslizamiento al pulsar una opcion. */
 undum.game.slideUpSpeed = 500;
-
-
-
 /* SITUACIONES DEL JUEGO. CADA UNA CON UN UNICO ID. */
-undum.game.situations = {
-  inicio: new undum.SimpleSituation(
 
-    "<H1><a href='iniciohistoria' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+undum.game.situations = {
+    inicio: new undum.SimpleSituation(
+            "<form name='formulario' action=''>\
+            <h3><div><label for='nombre'>Nombre</label><input type='text' name='nom' id='nombre' value= '' class='marco'></label></div></h3>\
+            <h3><div><label for='password'>Contraseña</label><input type='password' name='pass' id='password' value= '' class='marco'></label></div></h3>\
+            <center><input type='button' id = 'boton' value='ACEPTAR' onclick='ir2()' VSPACE='40' class='marco'>\
+            </FORM></center>\
+            <center><H1><a href='menu' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
+                <span id='span4'></span>Menu del Juego</a></H1>",
+            {
+                heading: "_____Identificación_____"
+            }
+    ),
+    menu: new undum.SimpleSituation(
+            function ir3() {
+                nombreUsuario = document.getElementById('nombre').value;
+                return "<center><H4>Hola " + nombreUsuario + ", aqui tienes tu Menu de juego:</H4></center><H1><a href='iniciohistoria' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>NUEVO JUEGO</center></a></H1> \
         <H1><a href='cargarjuego' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
                 <span id='span4'></span><center>CARGAR JUEGO</center></a></H1> \
         <H1><a href='salir' class='click'><span id='span1'></span><span id='span2'></span><span id='span3'></span> \
-                <span id='span4'></span><center>SALIR</center></p></H1>"
-  ),
-  nuevojuego: new undum.SimpleSituation(
-    "<h1>Aqui iniciariamos un nuevo juego preguntandole al usuario su nombre.</h1>"
-  ),
-  cargarjuego: new undum.SimpleSituation(
-    "<h1>Aqui cargariamos un juego que previamente se haya guardado.</h1>"
-  ),
-  salir: new undum.SimpleSituation(
-    "<h1>Y aqui se volveria a la pantalla de inicio.</h1>"
-
-
-  ),
-
-
-  iniciohistoria: new undum.SimpleSituation(
-    "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
+                <span id='span4'></span><center>SALIR</center></p></H1>";
+            }
+    ),
+    iniciohistoria: new undum.SimpleSituation(
+            "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras unas increibles vacaciones de tres días. ¡Qué rápido pasa el tiempo!  \
 	  Este cuatrimestre cursas la asignatura más difícil de la carrera. </p><p>Tienes que hacer todo lo por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.</p><p><a href='./ayuda'> ¿Necesitas ayuda?</a><p><a href='biblioteca'> Comenzar el cuatrimestre.</a></p>", {
-      enter: function(character, system, from) {
-        system.setCharacterText(
-          "<p>Progreso del juego 0%</p>"
-        );
-
-      },
-      heading: "1 de Febrero: Fin de las vacaciones",
-      actions: {
-        "ayuda": function(character, system, action) {
-          system.setCharacterText(
-            "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar. Si tienes menos de 0 suspenderás.</p>"
-          );
-
-        }
-      },
-
-    }
-  ),
+                enter: function (character, system, from) {
+                    system.setCharacterText(
+                            "<p>Progreso del juego 0%</p>"
+                            );
+                },
+                heading: "1 de Febrero: Fin de las vacaciones",
+                actions: {
+                    "ayuda": function (character, system, action) {
+                        system.setCharacterText(
+                                "<p>Debes de conseguir más de 100 puntos de conocimiento o interés para aprobar. Si tienes menos de 0 suspenderás.</p>"
+                                );
+                    }
+                }
+            }
+    ),
+    cargarjuego: new undum.SimpleSituation(
+            "<div><center><p>No tiene ningun juego guardado, empieze uno nuevo!!</p><img src='media/img/error.png' class='float_up'></p></center></div>\
+                        <div><center><H1><p class='transient'>Volvamos al menu...</p></H1></center></div><div><p></center><H1><a href='menu'>MENU DEL JUEGO</a></p></div></center></H1>",
+            {
+                enter: function () {
+                    undum.game.id = localStorage.getItem("idJuego");
+                    anterior = localStorage.getItem("anteriorId");
+                    if (undum.game.id !== anterior) {
+                        window.alert('No se han encontrado datos guardados.');
+                    }
+                }
+            }
+    ),
+    salir: new undum.SimpleSituation(
+            "<h1>Inicio.</h1>",
+            {
+                enter: function () {
+                    location.reload();
+                }
+            }
+    ),
   iniciohistoria2: new undum.SimpleSituation(
     "<p><img src='media/img/curso.png' class='float_right'>Tienes las pilas recargadas tras... ¡Un momento, esto ya lo has vivido!  \
 	  Acabas de viajar al pasado tras suspender el examen. </p><p>Debes de todo lo posible por aprobar y tomar las decisiones correctas. Una tercera matrícula duele mucho.  No debes desaprovechar esta oportunidad</p><p><a href='./ayuda'> ¿Necesitas ayuda?</a><p><a href='biblioteca'> Volver a comenzar el cuatrimestre</a></p>", {
